@@ -20,3 +20,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/test', 'test@test');
+
+#Categoria
+Route::resource('categoria','categoriaController');
+

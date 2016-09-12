@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace shonflower\Http\Controllers;
 
-use App\Http\Requests;
+use shonflower\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

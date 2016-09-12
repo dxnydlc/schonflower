@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        shonflower\Providers\AppServiceProvider::class,
+        shonflower\Providers\AuthServiceProvider::class,
+        shonflower\Providers\EventServiceProvider::class,
+        shonflower\Providers\RouteServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
         Collective\Bus\BusServiceProvider::class,

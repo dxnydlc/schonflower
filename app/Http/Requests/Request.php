@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace shonflower\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

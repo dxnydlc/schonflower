@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace shonflower\Events;
 
 abstract class Event
 {
