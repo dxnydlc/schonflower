@@ -5,6 +5,10 @@
 Schon Flower - Categorias
 @endsection
 
+@section('losCSS')
+	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
+@endsection
+
 @section('header-page')
 <h1>
 	Categorías
@@ -18,6 +22,8 @@ Schon Flower - Categorias
 @endsection
 
 @section('content')
+
+<input type="hidden" id="token" value="{{ csrf_token() }}" >
 
 	@include('alertas.success')
     @include('alertas.errors')
@@ -58,40 +64,29 @@ Schon Flower - Categorias
 			<!-- /.box-header -->
 			<div class="box-body table-responsive no-padding">
 			  <table class="table table-hover">
-				<tr>
-				  <th>ID</th>
-				  <th>Nombre</th>
-				  <th>Creado</th>
-				</tr>
-				<tr>
-				  <td>183</td>
-				  <td>John Doe</td>
-				  <td>11-7-2014</td>
-				  <td><span class="label label-success">Approved</span></td>
-				  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-				</tr>
-				<tr>
-				  <td>219</td>
-				  <td>Alexander Pierce</td>
-				  <td>11-7-2014</td>
-				  <td><span class="label label-warning">Pending</span></td>
-				  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-				</tr>
-				<tr>
-				  <td>657</td>
-				  <td>Bob Doe</td>
-				  <td>11-7-2014</td>
-				  <td><span class="label label-primary">Approved</span></td>
-				  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-				</tr>
-				<tr>
-				  <td>175</td>
-				  <td>Mike Doe</td>
-				  <td>11-7-2014</td>
-				  <td><span class="label label-danger">Denied</span></td>
-				  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-				</tr>
+			  	<thead>
+			  		<tr>
+					  <th>ID</th>
+					  <th>Nombre</th>
+					  <th>Creado</th>
+					</tr>
+			  	</thead>
+			  	<tbody>
+			  		@foreach($dataCategorias as $categoria)
+	                    <tr>
+	                        <th scope="row">{{$categoria->id}}</th>
+	                        <td>
+	                            {!!link_to_route('categoria.edit', $title  = $categoria->nombre, $parameters =$categoria->id, $attributes = ['class'=>'btn-link '] )!!}
+	                        </td>
+	                        <td>{{$categoria->created_at}}</td>
+	                        <td>
+	                            {!!link_to_route('categoria.edit', $title  = 'Anular', $parameters =$categoria->id, $attributes = ['class'=>'btn-link delCateg ','id'=>$categoria->id,'alt' => $categoria->nombre] )!!}
+	                        </td>
+	                    </tr>
+	                    @endforeach
+			  	</tbody>
 			  </table>
+			  {!!$dataCategorias->render()!!}
 			</div>
 			<!-- /.box-body -->
 		  </div>
@@ -100,4 +95,12 @@ Schon Flower - Categorias
 	</div>
 
 
+@endsection
+
+
+@section('scripts')
+	{!!Html::script('dist/js/alertify/alertify.js')!!}
+	
+	<!-- Categoria -->
+	{!!Html::script('dist/custom/categoria.js')!!}
 @endsection

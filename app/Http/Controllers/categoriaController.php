@@ -75,7 +75,8 @@ class categoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = categoria::find($id);
+        return view('categoria.editCategoria',["categoria" => $categoria ]);
     }
 
     /**
@@ -87,7 +88,16 @@ class categoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $categoria = categoria::find( $id );
+        $categoria->fill( $request->all() );
+        $categoria->save();
+        #Personal Log
+        #
+        return redirect::to('/categoria')->with('message','Categoria editada correctamente');;
     }
 
     /**
@@ -98,6 +108,13 @@ class categoriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $data = categoria::where(['id' => $id])->delete();
+        #Personal Log
+        #
+        return $data;
     }
 }

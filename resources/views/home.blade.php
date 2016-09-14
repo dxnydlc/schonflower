@@ -15,3 +15,14 @@
     </div>
 </div>
 @endsection
+
+
+@section('scripts')
+    
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    {!!Html::script('dist/js/pages/dashboard2.js')!!}
+
+    <!-- AdminLTE for demo purposes -->
+    {!!Html::script('dist/js/demo.js')!!}
+@endsection
+
