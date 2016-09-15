@@ -15,7 +15,7 @@ Schon Flower - Agregar Producto
 @section('breadcrumb-page')
 	<li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
 	<li><a href="{{ url('/producto') }}"><i class="fa fa-dashboard"></i> Producto</a></li>
-	<li class="active">Agregar Categoría</li>
+	<li class="active">Agregar Producto</li>
 @endsection
 
 @section('content')
