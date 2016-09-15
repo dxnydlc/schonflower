@@ -24,3 +24,7 @@ Route::get('/test', 'test@test');
 #Categoria
 Route::resource('categoria','categoriaController');
 
+#Producto
+Route::resource('producto','productoController');
+
+

@@ -13,4 +13,16 @@ class productos extends Model
 
     protected $fillable = ['nombre','id_categoria','nombre_categoria','nombre','sku','lote','description'];
     protected $dates = ['deleted_at'];
+
+    public function getCreatedAtAttribute($valor)
+    {
+        if( $valor != '' )
+        {
+        	list($fecha,$hora) = explode(' ', $valor );
+            list($anio,$mes,$dia) = explode('-', $fecha );
+            $fecha_out = $dia.'/'.$mes.'/'.$anio;
+            return $fecha_out.' '.$hora;
+        }
+    }
+    
 }

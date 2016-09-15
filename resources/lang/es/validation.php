@@ -144,6 +144,9 @@ return [
         'forma_pago' => [
             'required' => 'Indique una forma de pago'
         ],
+        'nombre_categoria' => [
+            'required' => 'Seleccione una categoría'
+        ]
         
     ],
     /*

@@ -2,22 +2,21 @@
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Agregar Categorias
+Schon Flower - Agregar Producto
 @endsection
 
 @section('header-page')
 <h1>
-	Categorías
-<small>Agregar una nueva categoría para clasificar un producto</small>
+	Productos
+<small>Productos que se podrán usar en el menú.</small>
 </h1>
 @endsection
 
 @section('breadcrumb-page')
 	<li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-	<li><a href="{{ url('/categoria') }}"><i class="fa fa-dashboard"></i> Categoría</a></li>
+	<li><a href="{{ url('/producto') }}"><i class="fa fa-dashboard"></i> Producto</a></li>
 	<li class="active">Agregar Categoría</li>
 @endsection
-
 
 @section('content')
 
@@ -32,12 +31,12 @@ Schon Flower - Agregar Categorias
 			<div class="col-md-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Datos de la categoría</h3>
+						<h3 class="box-title">Datos del producto</h3>
 					</div>
 					<div class="box-body">
 						<!-- Contenido aqui -->
-						{!!Form::open(['route'=>'categoria.store','method'=>'post','autocomplete'=>'off', 'class' => '' ])!!}
-                        	@include('categoria.forms.form')
+						{!!Form::model( $data['producto'] , [ 'route' => [ 'producto.update' , $data['producto']->id ] ,'method'=>'PUT','autocomplete'=>'off', 'class' => '' ])!!}
+                        	@include('producto.forms.form')
                         	<div class="box-footer">
 				                <button type="submit" class="btn btn-primary">Guardar</button>
 				            </div>
@@ -48,5 +47,13 @@ Schon Flower - Agregar Categorias
 		</div>
 	</div>
 </div>
+
+@endsection
+
+
+@section('scripts')
+
+	<!-- producto -->
+	{!!Html::script('dist/custom/addProducto.js')!!}
 
 @endsection

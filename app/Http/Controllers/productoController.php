@@ -7,19 +7,17 @@ use Illuminate\Http\Request;
 use shonflower\Http\Requests;
 use shonflower\Http\Controllers\Controller;
 
-
 use Session;
 use Redirect;
 use Auth;
 use Carbon;
-
-use shonflower\Http\Requests\categoriaAddRequest;
-use shonflower\Http\Requests\categoriaUpdateRequest;
-
+use shonflower\productos;
 use shonflower\categoria;
 
+use shonflower\Http\Requests\productoAddRequest;
+use shonflower\Http\Requests\productoUpdateRequest;
 
-class categoriaController extends Controller
+class productoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,9 +26,9 @@ class categoriaController extends Controller
      */
     public function index()
     {
-        $dataCategorias = array();
-        $dataCategorias = categoria::paginate(5);
-        return view('categoria.homeCateg',compact('dataCategorias'));
+        $dataProd = array();
+        $dataProd = productos::paginate(5);
+        return view('producto.homeProducto',compact('dataProd'));
     }
 
     /**
@@ -40,7 +38,10 @@ class categoriaController extends Controller
      */
     public function create()
     {
-        return view('categoria.addCategoria');
+        $data = array();
+        $data['categoria']   = categoria::orderBy('nombre')->lists('nombre','id');
+        #
+        return view('producto.addProducto',compact('data'));
     }
 
     /**
@@ -49,15 +50,15 @@ class categoriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(categoriaAddRequest $request)
+    public function store(productoAddRequest $request)
     {
         #User data
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
-        $categ = categoria::create( $request->all() );
+        $categ = productos::create( $request->all() );
 
-        return redirect::to('/categoria')->with('message','Categoria creada correctamente');
+        return redirect::to('/producto')->with('message','Producto creado correctamente');
     }
 
     /**
@@ -68,7 +69,7 @@ class categoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        #
     }
 
     /**
@@ -79,8 +80,11 @@ class categoriaController extends Controller
      */
     public function edit($id)
     {
-        $categoria = categoria::find($id);
-        return view('categoria.editCategoria',["categoria" => $categoria ]);
+        $data = array();
+        $producto = productos::find($id);
+        $data['categoria']  = categoria::orderBy('nombre')->lists('nombre','id');
+        $data['producto']   = $producto;
+        return view('producto.editProducto',[ "data" => $data ]);
     }
 
     /**
@@ -90,18 +94,18 @@ class categoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(categoriaUpdateRequest $request, $id)
+    public function update(productoUpdateRequest $request, $id)
     {
         #User data
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
-        $categoria = categoria::find( $id );
-        $categoria->fill( $request->all() );
-        $categoria->save();
+        $producto = productos::find( $id );
+        $producto->fill( $request->all() );
+        $producto->save();
         #Personal Log
         #
-        return redirect::to('/categoria')->with('message','Categoria editada correctamente');;
+        return redirect::to('/producto')->with('message','Producto editado correctamente');;
     }
 
     /**
@@ -116,7 +120,7 @@ class categoriaController extends Controller
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
-        $data = categoria::where(['id' => $id])->delete();
+        $data = productos::where(['id' => $id])->delete();
         #Personal Log
         #
         return $data;

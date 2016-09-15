@@ -20,7 +20,12 @@ Schon Flower - Categorias
 
 
 @section('content')
-
+	
+	@include('alertas.success')
+    @include('alertas.errors')
+    @include('alertas.mensaje')
+    @include('alertas.usuario')
+    
 <div class="row">
 	<div class=" col-lg-offset-3 col-lg-6  ">
 		<div class="row">
