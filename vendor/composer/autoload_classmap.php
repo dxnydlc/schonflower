@@ -25,6 +25,7 @@ return array(
     'CreateMenusTable' => $baseDir . '/database/migrations/2016_09_10_072224_create_menus_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateProductosTable' => $baseDir . '/database/migrations/2016_09_10_071230_create_productos_table.php',
+    'CreateTipoMenusTable' => $baseDir . '/database/migrations/2016_09_15_214030_create_tipo_menus_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DOMPDF' => $vendorDir . '/dompdf/dompdf/include/dompdf.cls.php',
     'DOMPDF_Exception' => $vendorDir . '/dompdf/dompdf/include/dompdf_exception.cls.php',

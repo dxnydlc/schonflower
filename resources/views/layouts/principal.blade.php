@@ -354,6 +354,7 @@
             <li><a href="{{ url('/usuario') }}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
             <li><a href="{{ url('/categoria') }}"><i class="fa fa-circle-o"></i> Categorias</a></li>
             <li><a href="{{ url('/producto') }}"><i class="fa fa-circle-o"></i> Productos</a></li>
+            <li><a href="{{ url('/tipo_menu') }}"><i class="fa fa-circle-o"></i> Tipo de Menú</a></li>
             <li><a href="{{ url('/menu') }}"><i class="fa fa-circle-o"></i> Menú</a></li>
           </ul>
         </li>

@@ -27,4 +27,6 @@ Route::resource('categoria','categoriaController');
 #Producto
 Route::resource('producto','productoController');
 
+#Tipo Menu
+Route::resource('tipo_menu','tipoMenuController');
 

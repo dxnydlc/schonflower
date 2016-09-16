@@ -344,6 +344,7 @@ class ComposerStaticInit78ad560f4bc7625fb414eaaeecb324f6
         'CreateMenusTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_10_072224_create_menus_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateProductosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_10_071230_create_productos_table.php',
+        'CreateTipoMenusTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_15_214030_create_tipo_menus_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DOMPDF' => __DIR__ . '/..' . '/dompdf/dompdf/include/dompdf.cls.php',
         'DOMPDF_Exception' => __DIR__ . '/..' . '/dompdf/dompdf/include/dompdf_exception.cls.php',
