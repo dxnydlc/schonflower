@@ -4,7 +4,7 @@ namespace shonflower\Http\Requests;
 
 use shonflower\Http\Requests\Request;
 
-class categoriaAddRequest extends Request
+class updateMenuRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class categoriaAddRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,7 +24,7 @@ class categoriaAddRequest extends Request
     public function rules()
     {
         return [
-            'nombre'    => 'required'
+            //
         ];
     }
 }

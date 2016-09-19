@@ -24,7 +24,12 @@ class addTipoMenuRequest extends Request
     public function rules()
     {
         return [
-            'nombre' => 'required'
+            'producto'      => 'required',
+            'tipo_menu'     => 'required',
+            'categoria'     => 'required',
+            'fecha'         => 'required',
+            'precio'        => 'required',
+            'stock'         => 'required'
         ];
     }
 }

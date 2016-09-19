@@ -27,7 +27,7 @@ class productoController extends Controller
     public function index()
     {
         $dataProd = array();
-        $dataProd = productos::paginate(5);
+        $dataProd = productos::paginate(10);
         return view('producto.homeProducto',compact('dataProd'));
     }
 
@@ -125,4 +125,13 @@ class productoController extends Controller
         #
         return $data;
     }
+
+    public function prod_by_categ( $categ )
+    {
+        $data = array();
+        $data['prod']   = productos::where('id_categoria','=',$categ)->orderBy('nombre')->get();
+        $data['cant']   = count($data['prod']);
+        return $data;
+    }
+
 }

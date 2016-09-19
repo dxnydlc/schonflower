@@ -146,6 +146,18 @@ return [
         ],
         'nombre_categoria' => [
             'required' => 'Seleccione una categoría'
+        ],
+        'producto' => [
+            'required' => 'Seleccione un Producto'
+        ],
+        'tipo_menu' => [
+            'required' => 'Seleccione un Tipo de Menú'
+        ],
+        'precio' => [
+            'required' => 'Ingrese un Precio'
+        ],
+        'stock' => [
+            'required' => 'Ingrese un Stock'
         ]
         
     ],

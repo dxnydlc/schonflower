@@ -26,7 +26,10 @@ Route::resource('categoria','categoriaController');
 
 #Producto
 Route::resource('producto','productoController');
+Route::get('prod_by_categ/{categ}','productoController@prod_by_categ');
 
 #Tipo Menu
 Route::resource('tipo_menu','tipoMenuController');
 
+#Menu
+Route::resource('menu','menuController');
