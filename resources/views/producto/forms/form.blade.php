@@ -17,6 +17,11 @@
 	</div>
 
 	<div class="form-group">
+		{!!Form::label('precio','Precio (*):' , ['for' => 'precio' ] )!!}
+	    {!!Form::text('precio',null,['class'=>'form-control'])!!}
+	</div>
+
+	<div class="form-group">
 		{!!Form::label('description','Descripción :' , ['for' => 'description' ] )!!}
 	    {!!Form::textarea('description',null,['class'=>'form-control'])!!}
 	</div>

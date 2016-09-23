@@ -69,6 +69,7 @@ Schon Flower - Productos
 					  <th>ID</th>
 					  <th>Nombre</th>
 					  <th>Categoria</th>
+					  <th>Precio</th>
 					  <th>SKU</th>
 					  <th>Creado</th>
 					</tr>
@@ -81,6 +82,7 @@ Schon Flower - Productos
 	                            {!!link_to_route('producto.edit', $title  = $producto->nombre, $parameters =$producto->id, $attributes = ['class'=>'btn-link '] )!!}
 	                        </td>
 	                        <td>{{$producto->nombre_categoria}}</td>
+	                        <td>{{$producto->precio}}</td>
 	                        <td>{{$producto->sku}}</td>
 	                        <td>{{$producto->created_at}}</td>
 	                        <td>

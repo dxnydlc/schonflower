@@ -5,13 +5,13 @@ namespace shonflower;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class productos extends Model
+class menu_hoy extends Model
 {
     use SoftDeletes;
-    protected $table = 'productos';
+    protected $table = 'menu_hoy';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['nombre','id_categoria','nombre_categoria','nombre','sku','precio','lote','description'];
+    protected $fillable = ['id_combo','combo','precio','fecha'];
     protected $dates = ['deleted_at'];
 
     public function getCreatedAtAttribute($valor)
@@ -24,5 +24,4 @@ class productos extends Model
             return $fecha_out.' '.$hora;
         }
     }
-    
 }
