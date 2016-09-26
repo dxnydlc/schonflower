@@ -12,20 +12,16 @@ use Session;
 use Redirect;
 use Auth;
 use Carbon;
-
-use shonflower\menu;
 use shonflower\productos;
-use shonflower\tipo_menu;
 use shonflower\categoria;
-
-use shonflower\menu_hoy;
-use shonflower\detalle_menu;
 use shonflower\precio_combo;
+use shonflower\tipo_menu;
 
-use shonflower\Http\Requests\addTipoMenuRequest;
-use shonflower\Http\Requests\updateTipoMenuRequest;
 
-class menuController extends Controller
+use shonflower\Http\Requests\precioCboaddRequest;
+use shonflower\Http\Requests\precioCboupdateRequest;
+
+class precioComboController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,9 +30,9 @@ class menuController extends Controller
      */
     public function index()
     {
-        $dataMenu = array();
-        $dataMenu = menu_hoy::paginate(10);
-        return view('menu.homeMenu',compact('dataMenu'));
+        $dataProd = array();
+        $dataProd = precio_combo::paginate(10);
+        return view('precio_combo.homePrecioCombo',compact('dataProd'));
     }
 
     /**
@@ -46,19 +42,10 @@ class menuController extends Controller
      */
     public function create()
     {
-        $mytime = Carbon\Carbon::now('America/Lima');
-        $mytime->toDateString();
-        $token = \Hash::make( $mytime->toDateTimeString() );
-        #
         $data = array();
-        $data['productos']      = [''=>''];#productos::orderBy('nombre')->lists('nombre','id');
-        $data['tipo_menu']      = tipo_menu::orderBy('nombre')->lists('nombre','id');
-        $data['categoria']      = categoria::orderBy('nombre')->lists('nombre','id');
-        $data['precio_combo']   = precio_combo::orderBy('tipo_menu')->lists('tipo_menu','id');
-        $data['json_pc']        = precio_combo::select('id','precio')->get();
-        $data['fecha']          = $mytime->format('d/m/Y');
-        $data['token']          = $token;
-        return view('menu.addMenu',compact('data'));
+        $data['tipo_menu']   = tipo_menu::orderBy('nombre')->lists('nombre','id');
+        #
+        return view('precio_combo.addprecioCbo',compact('data'));
     }
 
     /**
@@ -67,16 +54,15 @@ class menuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(addTipoMenuRequest $request)
+    public function store(precioCboaddRequest $request)
     {
         #User data
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
-        #return $request->all();
-        $categ = menu::create( $request->all() );
+        $categ = precio_combo::create( $request->all() );
 
-        return redirect::to('/menu')->with('message','Menu creado correctamente');
+        return redirect::to('/precio_combo')->with('message','Combo creado correctamente');
     }
 
     /**
@@ -98,7 +84,11 @@ class menuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = array();
+        $precio_combo           = precio_combo::find($id);
+        $data['tipo_menu']      = tipo_menu::orderBy('nombre')->lists('nombre','id');
+        $data['precio_combo']   = $precio_combo;
+        return view('precio_combo.editPrecioCbo',[ "data" => $data ]);
     }
 
     /**
@@ -108,9 +98,18 @@ class menuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(precioCboupdateRequest $request, $id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $producto = precio_combo::find( $id );
+        $producto->fill( $request->all() );
+        $producto->save();
+        #Personal Log
+        #
+        return redirect::to('/precio_combo')->with('message','Combo editado correctamente');
     }
 
     /**
@@ -121,6 +120,13 @@ class menuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $data = precio_combo::where(['id' => $id])->delete();
+        #Personal Log
+        #
+        return $data;
     }
 }

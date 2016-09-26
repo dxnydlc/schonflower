@@ -356,6 +356,7 @@
             <li><a href="{{ url('/producto') }}"><i class="fa fa-circle-o"></i> Productos</a></li>
             <li><a href="{{ url('/tipo_menu') }}"><i class="fa fa-circle-o"></i> Tipo de Menú</a></li>
             <li><a href="{{ url('/menu') }}"><i class="fa fa-circle-o"></i> Menú</a></li>
+            <li><a href="{{ url('/precio_combo') }}"><i class="fa fa-circle-o"></i> Precio combo</a></li>
           </ul>
         </li>
 

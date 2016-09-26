@@ -33,3 +33,13 @@ Route::resource('tipo_menu','tipoMenuController');
 
 #Menu
 Route::resource('menu','menuController');
+
+#Detalle Menu
+Route::resource('det_menu','detalleMenuController');
+
+#Precio combo
+Route::resource('precio_combo','precioComboController');
+
+#Buscar producto por su ID
+Route::get('prod_by_id/{id}','productoController@find_prod');
+

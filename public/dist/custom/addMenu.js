@@ -1,31 +1,24 @@
 
 var _servicio = 'http://localhost:8000/menu/';
 var _srvProd  = 'http://localhost:8000/prod_by_categ';
+var _srvProdData= 'http://localhost:8000/prod_by_id';
+var _srvDetalle= 'http://localhost:8000/det_menu';
 
 (function($){
 	$(document).ready(function()
 		{
 			/*--------------------------------------*/
-			$('#btnSelCateg').click(function(event) {
+			$('#id_categoria').change(function(event) {
 				event.preventDefault();
-				var _idCateg = $('#mask_categoria').val(), _txt = $("#mask_categoria option:selected").text();
+				var _idCateg = $('#id_categoria').val(), _txt = $("#id_categoria option:selected").text();
 				$('#categoria').val( _txt );
 				$('#id_categoria').val( _idCateg );
 				$.get(_srvProd+'/'+_idCateg, function(data) {
 					llenar_combo( data );
-					$('#myModal').modal('hide')
+					//$('#myModal').modal('hide')
 				},'json');
 			});
 			/*--------------------------------------*/
-			$('#id_producto').click(function(event) {
-				var _Prod = $("#id_producto option:selected").text();
-				seleccionar_combo( _Prod );
-			});
-			/*--------------------------------------*/
-			$('#id_producto').change(function(event) {
-				var _Prod = $("#id_producto option:selected").text();
-				seleccionar_combo( _Prod );
-			});
 			/*--------------------------------------*/
 			//Date picker
 			$('#fecha').datepicker({
@@ -44,9 +37,39 @@ var _srvProd  = 'http://localhost:8000/prod_by_categ';
 				seleccionar_tm( _Prod );
 			});
 			/*--------------------------------------*/
+			$('#id_combo').click(function(event) {
+				var _Prod = $("#id_combo option:selected").text();
+				seleccionar_prec_combo( _Prod , $(this).val() );
+			});
 			/*--------------------------------------*/
+			$('#id_combo').change(function(event) {
+				var _Prod = $("#id_combo option:selected").text();
+				seleccionar_prec_combo( _Prod , $(this).val() );
+			});
 			/*--------------------------------------*/
+			$(".combito").select2();
 			/*--------------------------------------*/
+			$(document).delegate('#id_producto', 'change', function(event) {
+				var _idProd = $(this).val();
+				var _Prod = $("#id_producto option:selected").text();
+				seleccionar_combo( _Prod );
+				$.get( _srvProdData+'/'+_idProd, function(data) {
+					if( data.cant > 0 )
+					{
+						var _fila = data.prod[0];
+						$('#wrapper_precio #precio').val( _fila.precio );
+						$('#sku').val( _fila.sku );
+					}
+				},'json');
+			});
+			/*--------------------------------------*/
+			$('#btnSaveDet').click(function(event) {
+				event.preventDefault();
+				var _data = $('#frmDetalle').serialize();
+				$.post( _srvDetalle , _data , function(data, textStatus, xhr) {
+					console.log( data );
+				},'json');
+			});
 			/*--------------------------------------*/
 		});
 
@@ -77,4 +100,16 @@ function seleccionar_combo( _txt )
 function seleccionar_tm( _txt )
 {
 	$('#tipo_menu').val( _txt );
+}
+
+function seleccionar_prec_combo( _txt , _id )
+{
+	$('#combo').val( _txt );
+	for (var i = 0; i < _json_pc.length; i++) {
+		var _fila = _json_pc[i];
+		if( _fila.id == _id )
+		{
+			$('#precio').val( _fila.precio );
+		}
+	}
 }

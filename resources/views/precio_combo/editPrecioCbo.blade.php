@@ -1,21 +1,25 @@
-
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Editar Producto
+Schon Flower - Editar Precio Combos
+@endsection
+
+@section('losCSS')
+	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
 @endsection
 
 @section('header-page')
 <h1>
-	Productos
-<small>Productos que se podrán usar en el menú.</small>
+	Precio Combos
+<small>Precio para los tipos de menú que se venderán.</small>
 </h1>
 @endsection
 
+
 @section('breadcrumb-page')
 	<li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-	<li><a href="{{ url('/producto') }}"><i class="fa fa-dashboard"></i> Producto</a></li>
-	<li class="active">Agregar Producto</li>
+	<li><a href="{{ url('/precio_combos') }}"><i class="fa fa-dashboard"></i> Precio combos</a></li>
+	<li class="active">Editar Combo</li>
 @endsection
 
 @section('content')
@@ -31,12 +35,12 @@ Schon Flower - Editar Producto
 			<div class="col-md-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Datos del producto</h3>
+						<h3 class="box-title">Datos del Combo</h3>
 					</div>
 					<div class="box-body">
 						<!-- Contenido aqui -->
-						{!!Form::model( $data['producto'] , [ 'route' => [ 'producto.update' , $data['producto']->id ] ,'method'=>'PUT','autocomplete'=>'off', 'class' => '' ])!!}
-                        	@include('producto.forms.form')
+						{!!Form::model( $data['precio_combo'] , [ 'route' => [ 'precio_combo.update' , $data['precio_combo']->id ] ,'method'=>'PUT','autocomplete'=>'off', 'class' => '' ])!!}
+                        	@include('precio_combo.forms.form')
                         	<div class="box-footer">
 				                <button type="submit" class="btn btn-primary">Guardar</button>
 				            </div>

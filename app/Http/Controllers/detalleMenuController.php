@@ -7,25 +7,15 @@ use Illuminate\Http\Request;
 use shonflower\Http\Requests;
 use shonflower\Http\Controllers\Controller;
 
+use shonflower\detalle_menu;
+
 
 use Session;
 use Redirect;
 use Auth;
 use Carbon;
 
-use shonflower\menu;
-use shonflower\productos;
-use shonflower\tipo_menu;
-use shonflower\categoria;
-
-use shonflower\menu_hoy;
-use shonflower\detalle_menu;
-use shonflower\precio_combo;
-
-use shonflower\Http\Requests\addTipoMenuRequest;
-use shonflower\Http\Requests\updateTipoMenuRequest;
-
-class menuController extends Controller
+class detalleMenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,9 +24,7 @@ class menuController extends Controller
      */
     public function index()
     {
-        $dataMenu = array();
-        $dataMenu = menu_hoy::paginate(10);
-        return view('menu.homeMenu',compact('dataMenu'));
+        //
     }
 
     /**
@@ -46,19 +34,7 @@ class menuController extends Controller
      */
     public function create()
     {
-        $mytime = Carbon\Carbon::now('America/Lima');
-        $mytime->toDateString();
-        $token = \Hash::make( $mytime->toDateTimeString() );
-        #
-        $data = array();
-        $data['productos']      = [''=>''];#productos::orderBy('nombre')->lists('nombre','id');
-        $data['tipo_menu']      = tipo_menu::orderBy('nombre')->lists('nombre','id');
-        $data['categoria']      = categoria::orderBy('nombre')->lists('nombre','id');
-        $data['precio_combo']   = precio_combo::orderBy('tipo_menu')->lists('tipo_menu','id');
-        $data['json_pc']        = precio_combo::select('id','precio')->get();
-        $data['fecha']          = $mytime->format('d/m/Y');
-        $data['token']          = $token;
-        return view('menu.addMenu',compact('data'));
+        //
     }
 
     /**
@@ -67,16 +43,15 @@ class menuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(addTipoMenuRequest $request)
+    public function store(Request $request)
     {
         #User data
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
         #return $request->all();
-        $categ = menu::create( $request->all() );
-
-        return redirect::to('/menu')->with('message','Menu creado correctamente');
+        $item = detalle_menu::create( $request->all() );
+        return $item;
     }
 
     /**

@@ -105,7 +105,7 @@ class productoController extends Controller
         $producto->save();
         #Personal Log
         #
-        return redirect::to('/producto')->with('message','Producto editado correctamente');;
+        return redirect::to('/producto')->with('message','Producto editado correctamente');
     }
 
     /**
@@ -130,6 +130,14 @@ class productoController extends Controller
     {
         $data = array();
         $data['prod']   = productos::where('id_categoria','=',$categ)->orderBy('nombre')->get();
+        $data['cant']   = count($data['prod']);
+        return $data;
+    }
+
+    public function find_prod( $id )
+    {
+        $data = array();
+        $data['prod']   = productos::where('id','=',$id)->get();
         $data['cant']   = count($data['prod']);
         return $data;
     }

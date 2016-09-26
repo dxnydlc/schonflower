@@ -11,7 +11,7 @@ class menu_hoy extends Model
     protected $table = 'menu_hoy';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['id_combo','combo','precio','fecha'];
+    protected $fillable = ['id_combo','combo','precio','fecha','token','lote'];
     protected $dates = ['deleted_at'];
 
     public function getCreatedAtAttribute($valor)
