@@ -11,7 +11,7 @@ class menu_hoy extends Model
     protected $table = 'menu_hoy';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['id_combo','combo','precio','fecha','token','lote'];
+    protected $fillable = ['id_combo','combo','precio','fecha','token','lote','comentarios'];
     protected $dates = ['deleted_at'];
 
     public function getCreatedAtAttribute($valor)
@@ -24,4 +24,26 @@ class menu_hoy extends Model
             return $fecha_out.' '.$hora;
         }
     }
+
+    public function setFechaAttribute($valor)
+    {
+        if( $valor != '' )
+        {
+            list($dia,$mes,$anio) = explode('/', $valor );
+            $fecha = $anio.'-'.$mes.'-'.$dia;
+            $this->attributes['fecha'] = $fecha;
+        }
+    }
+
+    public function getFechaAttribute($valor)
+    {
+        if( $valor != '' )
+        {
+            list($anio,$mes,$dia) = explode('-', $valor );
+            $fecha = $dia.'/'.$mes.'/'.$anio;
+            return $fecha;
+        }
+    }
+
+
 }

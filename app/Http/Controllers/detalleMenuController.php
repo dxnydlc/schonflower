@@ -50,8 +50,13 @@ class detalleMenuController extends Controller
         $user       = Auth::User()->user;
         #
         #return $request->all();
-        $item = detalle_menu::create( $request->all() );
-        return $item;
+        #
+        $token  = $request['token'];
+        $item   = detalle_menu::create( $request->all() );
+        $data   = array();
+        $data['data']   = detalle_menu::select('*')->where('token', '=', $token)->whereNull('deleted_at')->orderBy('categoria', 'asc')->get();
+        $data['cant']   = count( $data['data'] );
+        return $data;
     }
 
     /**
@@ -96,6 +101,14 @@ class detalleMenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $data = detalle_menu::where(['id' => $id])->delete();
+        #$data = detalle_menu::destroy( $id );
+        #Personal Log
+        #
+        return $data;
     }
 }

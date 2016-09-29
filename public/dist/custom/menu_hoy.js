@@ -1,5 +1,5 @@
 
-var _servicio = 'http://localhost:8000/categoria/';
+var _servicio = 'http://localhost:8000/menu/';
 
 (function($){
 	$(document).ready(function()

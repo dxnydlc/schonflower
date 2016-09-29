@@ -1,7 +1,7 @@
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Menú
+Schon Flower - Editar Menú
 @endsection
 
 @section('losCSS')
@@ -39,6 +39,7 @@ Schon Flower - Menú
 
 <input type="hidden" id="token_lara" value="{{ csrf_token() }}" >
 
+
 <div class="row">
 	<div class=" col-lg-offset-1 col-lg-10  ">
 		<div class="row">
@@ -49,8 +50,10 @@ Schon Flower - Menú
 					</div>
 					<div class="box-body">
 						<!-- Contenido aqui -->
-						{!!Form::open(['route'=>'menu.store','method'=>'post','autocomplete'=>'off', 'class' => '' ])!!}
-							{!!Form::hidden('token',$data['token'],['id' => 'token'])!!}
+						{!!Form::model(  $data['menu'] , [ 'route' => [ 'menu.update' , $data['menu']->id ] ,'method'=>'PUT','autocomplete'=>'off', 'class' => '' ])!!}
+							
+							{!!Form::hidden('token',null,['id' => 'token'])!!}
+							{!!Form::hidden('id_menu',$data['menu']->id,['id' => 'id_menu'])!!}
                         	@include('menu.forms.form')
                         	<div class="box-footer">
 				                <button type="submit" class="btn btn-primary">Guardar</button>
@@ -89,6 +92,32 @@ Schon Flower - Menú
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($data['detalle'] as $rs)
+								<?php
+								$clase = '';
+								switch( $rs->categoria )
+								{
+									case 'Entrada':
+										$clase = 'label-success';
+									break;
+									case 'Plato de fondo':
+										$clase = 'label-info';
+									break;
+									case 'Plato a la carta':
+										$clase = 'label-danger';
+									break;
+								}
+								?>
+								<tr  id="Plato_{{ $rs->id }}"  >
+									<td>{{ $rs->id }}</td>
+									<td><span class="label {{ $clase }} ">{{ $rs->categoria }}</span></td>
+									<td>{{ $rs->producto }}</td>
+									<td>{{ $rs->sku }}</td>
+									<td>{{ $rs->precio }}</td>
+									<td>{{ $rs->stock }}</td>
+									<td><a id="{{ $rs->id }}" alt="{{ $rs->producto }}" href="#" class="btn btn-sm btn-danger quitarItem" ><span class="fa fa-minus-circle" ></span></a></td>
+								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>
@@ -109,9 +138,13 @@ Schon Flower - Menú
 		</div>
 		<div class="modal-body">
 			
-			<div class="row">
+			
 				{!!Form::open(['route'=>'det_menu.store','method'=>'post','autocomplete'=>'off', 'id' => 'frmDetalle' ])!!}
+				
+				<div class="row">
 					{!!Form::hidden('token',$data['token'],['id' => 'token'])!!}
+					{!!Form::hidden('id_menu',$data['menu']->id,['id' => 'id_menu'])!!}
+
 					<div class=" form-group col-lg-4 ">
 						{!!Form::label('id_categoria','Categoria plato (*):' , ['for' => 'id_categoria' ] )!!}
 						{!!Form::select('id_categoria', $data['categoria'] ,null,[ 'id' => 'id_categoria', 'placeholder'=>'Seleccione','class'=>'form-control combito','style' => 'width:100%'])!!}
@@ -138,8 +171,9 @@ Schon Flower - Menú
 						{!!Form::label('stock','Stock (*):' , ['for' => 'stock' ] )!!}
 					    {!!Form::text('stock',null,['class'=>'form-control'])!!}
 					</div>
+				</div>
 				{!!Form::close()!!}
-			</div>
+			
 
 		</div>
 		<!-- /.modal-body -->

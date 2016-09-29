@@ -158,6 +158,9 @@ return [
         ],
         'stock' => [
             'required' => 'Ingrese un Stock'
+        ],
+        'id_combo' => [
+            'required' => 'Seleccione un Tipo de Combo'
         ]
         
     ],

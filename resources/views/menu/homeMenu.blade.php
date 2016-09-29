@@ -66,22 +66,25 @@ Schon Flower - Menú
 			  <table class="table table-hover">
 			  	<thead>
 			  		<tr>
+					  <th>#</th>
 					  <th>Fecha</th>
-					  <th>Tipo</th>
-					  <th>Clase</th>
-					  <th>Producto</th>
+					  <th>Combo</th>
+					  <th>Precio</th>
+					  <th>Lote</th>
 					</tr>
 			  	</thead>
 			  	<tbody>
-			  		@foreach($dataMenu as $categoria)
+			  		@foreach($dataMenu as $rs)
 	                    <tr>
-	                        <th scope="row">{{$categoria->id}}</th>
+	                        <th scope="row">{{$rs->id}}</th>
 	                        <td>
-	                            {!!link_to_route('categoria.edit', $title  = $categoria->nombre, $parameters =$categoria->id, $attributes = ['class'=>'btn-link '] )!!}
+	                            {!!link_to_route('menu.edit', $title  = 'Menú '.$rs->fecha, $parameters =$rs->id, $attributes = ['class'=>'btn-link '] )!!}
 	                        </td>
-	                        <td>{{$categoria->created_at}}</td>
+	                        <td>{{$rs->combo}}</td>
+	                        <td>{{$rs->precio}}</td>
+	                        <td>{{$rs->lote}}</td>
 	                        <td>
-	                            {!!link_to_route('categoria.edit', $title  = 'Anular', $parameters =$categoria->id, $attributes = ['class'=>'btn-link delCateg ','id'=>$categoria->id,'alt' => $categoria->nombre] )!!}
+	                            {!!link_to_route('menu.edit', $title  = 'Anular', $parameters =$rs->id, $attributes = ['class'=>'btn-link delCateg ','id'=>$rs->id,'alt' => 'Menú '.$rs->fecha] )!!}
 	                        </td>
 	                    </tr>
 	                    @endforeach
@@ -103,5 +106,5 @@ Schon Flower - Menú
 	{!!Html::script('dist/js/alertify/alertify.js')!!}
 	
 	<!-- Categoria -->
-	{!!Html::script('dist/custom/categoria.js')!!}
+	{!!Html::script('dist/custom/menu_hoy.js')!!}
 @endsection
