@@ -1,5 +1,5 @@
 
-var _servicio = 'http://localhost:8000/menu/';
+var _servicio = _URL_HOME+'menu/';
 
 (function($){
 	$(document).ready(function()

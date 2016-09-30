@@ -355,8 +355,31 @@
             <li><a href="{{ url('/categoria') }}"><i class="fa fa-circle-o"></i> Categorias</a></li>
             <li><a href="{{ url('/producto') }}"><i class="fa fa-circle-o"></i> Productos</a></li>
             <li><a href="{{ url('/tipo_menu') }}"><i class="fa fa-circle-o"></i> Tipo de Menú</a></li>
-            <li><a href="{{ url('/menu') }}"><i class="fa fa-circle-o"></i> Menú</a></li>
             <li><a href="{{ url('/precio_combo') }}"><i class="fa fa-circle-o"></i> Precio combo</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cutlery"></i> <span>Menú</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/menu') }}"><i class="fa fa-circle-o"></i> Menú hoy</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file-text-o"></i> <span>Pedido manual</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/orden_manual') }}"><i class="fa fa-circle-o"></i> Menú hoy</a></li>
           </ul>
         </li>
 

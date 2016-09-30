@@ -7,6 +7,9 @@ Schon Flower - Menú
 
 @section('losCSS')
 	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
+
+	<script> var _URL_HOME = '{{ URL_HOME }}'; </script>
+
 @endsection
 
 @section('header-page')

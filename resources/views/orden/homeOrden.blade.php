@@ -2,26 +2,26 @@
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Productos
+Schon Flower - Orden manual
 @endsection
 
 @section('losCSS')
 	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
 
 	<script> var _URL_HOME = '{{ URL_HOME }}'; </script>
-	
+
 @endsection
 
 @section('header-page')
 <h1>
-	Productos
-<small>Productos que se podrán usar en el menú.</small>
+	Orden
+<small>Orden manual para un cliente</small>
 </h1>
 @endsection
 
 @section('breadcrumb-page')
 	<li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-	<li class="active">Producto</li>
+	<li class="active">Orden</li>
 @endsection
 
 @section('content')
@@ -38,8 +38,8 @@ Schon Flower - Productos
 			<div class="box">
 				<div class="box-header"></div>
 				<div class="box-body">
-					<a href="{{ url('/producto/create') }}" class="btn btn-app">
-						<i class="fa fa-plus"></i>Agregar
+					<a href="{{ url('/orden_manual/create') }}" class="btn btn-app">
+						<i class="fa fa-plus"></i>Agregar Orden
 					</a>
 				</div>
 			</div>
@@ -50,11 +50,11 @@ Schon Flower - Productos
 		<div class="col-xs-12">
 		  <div class="box">
 			<div class="box-header">
-			  <h3 class="box-title">Listando los productos</h3>
+			  <h3 class="box-title">Listado de ordenes actuales</h3>
 
 			  <div class="box-tools">
 				<div class="input-group input-group-sm" style="width: 150px;">
-				  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+				  <input type="text" name="table_search" class="form-control pull-right" placeholder="Buscar Orden">
 
 				  <div class="input-group-btn">
 					<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
@@ -69,33 +69,32 @@ Schon Flower - Productos
 			  <table class="table table-hover">
 			  	<thead>
 			  		<tr>
-					  <th>ID</th>
-					  <th>Nombre</th>
-					  <th>Categoria</th>
-					  <th>Precio</th>
-					  <th>SKU</th>
-					  <th>Creado</th>
+					  <th>#</th>
+					  <th>Cliente</th>
+					  <th>Correo</th>
+					  <th>Fecha</th>
+					  <th>Token</th>
+					  <th>Total</th>
+					  <th>Forma Pago</th>
 					</tr>
 			  	</thead>
 			  	<tbody>
-			  		@foreach($dataProd as $producto)
+			  		@foreach($dataMenu as $rs)
 	                    <tr>
-	                        <th scope="row">{{$producto->id}}</th>
+	                        <th scope="row">{{$rs->id}}</th>
 	                        <td>
-	                            {!!link_to_route('producto.edit', $title  = $producto->nombre, $parameters =$producto->id, $attributes = ['class'=>'btn-link '] )!!}
+	                            {!!link_to_route('menu.edit', $title  = 'Menú '.$rs->fecha, $parameters =$rs->id, $attributes = ['class'=>'btn-link '] )!!}
 	                        </td>
-	                        <td>{{$producto->nombre_categoria}}</td>
-	                        <td>{{$producto->precio}}</td>
-	                        <td>{{$producto->sku}}</td>
-	                        <td>{{$producto->created_at}}</td>
+	                        <td>{{$rs->combo}}</td>
+	                        <td>{{$rs->precio}}</td>
+	                        <td>{{$rs->lote}}</td>
 	                        <td>
-	                            {!!link_to_route('producto.edit', $title  = 'Anular', $parameters =$producto->id, $attributes = ['class'=>'btn-link delCateg ','id'=>$producto->id,'alt' => $producto->nombre] )!!}
+	                            {!!link_to_route('menu.edit', $title  = 'Anular', $parameters =$rs->id, $attributes = ['class'=>'btn-link delCateg ','id'=>$rs->id,'alt' => 'Menú '.$rs->fecha] )!!}
 	                        </td>
 	                    </tr>
-	                    @endforeach
+					@endforeach
 			  	</tbody>
 			  </table>
-			  {!!$dataProd->render()!!}
 			</div>
 			<!-- /.box-body -->
 		  </div>
@@ -110,6 +109,6 @@ Schon Flower - Productos
 @section('scripts')
 	{!!Html::script('dist/js/alertify/alertify.js')!!}
 	
-	<!-- producto -->
-	{!!Html::script('dist/custom/producto.js')!!}
+	<!-- Categoria -->
+	{!!Html::script('dist/custom/menu_hoy.js')!!}
 @endsection

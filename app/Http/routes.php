@@ -11,6 +11,12 @@
 |
 */
 
+#cambiar en produccion
+define("URL_HOME","http://localhost:8000/");
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -42,4 +48,8 @@ Route::resource('precio_combo','precioComboController');
 
 #Buscar producto por su ID
 Route::get('prod_by_id/{id}','productoController@find_prod');
+
+#Pedido manual
+Route::resource('orden_manual','ordenManualController');
+
 
