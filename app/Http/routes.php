@@ -52,4 +52,7 @@ Route::get('prod_by_id/{id}','productoController@find_prod');
 #Pedido manual
 Route::resource('orden_manual','ordenManualController');
 
+#CRUD usuario
+Route::resource('usuario','usuarioController');
+
 

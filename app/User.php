@@ -2,6 +2,8 @@
 
 namespace shonflower;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -12,8 +14,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','apellidos','telefono','tipo'
     ];
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -23,4 +26,31 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getCreatedAtAttribute($valor)
+    {
+        if( $valor != '' )
+        {
+            list($fecha,$hora) = explode(' ', $valor );
+            list($anio,$mes,$dia) = explode('-', $fecha );
+            $fecha_out = $dia.'/'.$mes.'/'.$anio;
+            return $fecha_out.' '.$hora;
+        }
+    }
+
+    public function getTipoAttribute($valor)
+    {
+        if( $valor != '' )
+        {
+            switch ($valor) {
+                case 'admin':
+                    return 'Administrador';
+                    break;
+                default:
+                    return 'Usuario';
+                    break;
+            }
+        }
+    }
+
 }

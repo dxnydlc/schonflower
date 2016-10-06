@@ -327,6 +327,7 @@ class ComposerStaticInit78ad560f4bc7625fb414eaaeecb324f6
     public static $classMap = array (
         'Absolute_Positioner' => __DIR__ . '/..' . '/dompdf/dompdf/include/absolute_positioner.cls.php',
         'Abstract_Renderer' => __DIR__ . '/..' . '/dompdf/dompdf/include/abstract_renderer.cls.php',
+        'AddCamposUsuario' => __DIR__ . '/../..' . '/database/migrations/2016_10_05_215427_addCamposUsuario.php',
         'AddCategoriaProductoMenu' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_215929_addCategoriaProductoMenu.php',
         'AddComentMenuHoy' => __DIR__ . '/../..' . '/database/migrations/2016_09_22_221325_addComentMenuHoy.php',
         'AddIDMenuDetalle' => __DIR__ . '/../..' . '/database/migrations/2016_09_25_225124_addIDMenuDetalle.php',

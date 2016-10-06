@@ -12,9 +12,11 @@ class CreatePedidoUsersTable extends Migration
      */
     public function up()
     {
+        /*
         Schema::create('pedido_user', function (Blueprint $table) {
             #
         });
+        */
     }
 
     /**

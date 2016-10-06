@@ -12,9 +12,11 @@ class CreateComandaUsersTable extends Migration
      */
     public function up()
     {
+        /*
         Schema::create('comanda_user', function (Blueprint $table) {
             #
         });
+        */
     }
 
     /**
