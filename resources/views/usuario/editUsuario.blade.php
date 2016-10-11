@@ -143,6 +143,7 @@ Schon Flower - Editar Usuario
 
 
 @section('scripts')
+	{!!Html::script('dist/js/alertify/alertify.js')!!}
 
 	<!-- producto -->
 	{!!Html::script('dist/custom/editUsuario.js')!!}

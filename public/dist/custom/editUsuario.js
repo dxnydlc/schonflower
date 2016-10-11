@@ -6,7 +6,7 @@ var _srvDir = _URL_HOME+'dir_user/';
 	$(document).ready(function()
 		{
 			/*--------------------------------------*/
-			$('.delCateg').click(function(event) {
+			$(document).delegate('.quitarItem', 'click', function(event) {
 				event.preventDefault();
 				var _token = $('#token').val();
 				var _DataSend = {'_method':'DELETE','_token': _token };
@@ -26,6 +26,7 @@ var _srvDir = _URL_HOME+'dir_user/';
 						//Cancel
 					});
 			});
+			/*--------------------------------------*/
 			/*--------------------------------------*/
 			$('#ubigeo').click(function(event) {
 				get_name_ubigeo();

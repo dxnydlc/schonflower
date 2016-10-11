@@ -98,6 +98,13 @@ class dirController extends Controller
      */
     public function destroy($id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $data = productos::where(['id' => $id])->delete();
+        #Personal Log
+        #
+        return $data;
     }
 }

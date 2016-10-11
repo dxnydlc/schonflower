@@ -17,7 +17,7 @@
 			<td>{{$rs->distrito}}</td>
 			<td>{{$rs->direccion}}</td>
 			<td>{{$rs->telefono}}</td>
-			<td><a id="" alt="" href="#" class="btn btn-sm btn-danger quitarItem" ><span class="fa fa-minus-circle" ></span></a></td>
+			<td><a id="{{$rs->id}}" alt="{{$rs->distrito}}" href="#" class="btn btn-sm btn-danger quitarItem" ><span class="fa fa-minus-circle" ></span></a></td>
 		</tr>
 		@endforeach
 	</tbody>
