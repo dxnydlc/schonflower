@@ -55,4 +55,7 @@ Route::resource('orden_manual','ordenManualController');
 #CRUD usuario
 Route::resource('usuario','usuarioController');
 
+#CRUD direcciones usuario
+Route::resource('dir_user','dirController');
+
 

@@ -4,9 +4,6 @@ namespace shonflower\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use shonflower\Http\Requests;
-use shonflower\Http\Controllers\Controller;
-
 
 use Session;
 use Redirect;
@@ -14,14 +11,13 @@ use Auth;
 use Carbon;
 use shonflower\productos;
 use shonflower\categoria;
-use shonflower\User;
-use shonflower\ubigeo_lima;
 use shonflower\direcion_usuario;
 
-use shonflower\Http\Requests\usuarioAddRequest;
-use shonflower\Http\Requests\usuarioUpdateRequest;
 
-class usuarioController extends Controller
+use shonflower\Http\Requests;
+use shonflower\Http\Controllers\Controller;
+
+class dirController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,9 +26,7 @@ class usuarioController extends Controller
      */
     public function index()
     {
-        $dataProd = array();
-        $dataProd = User::paginate(10);
-        return view('usuario.homeUsuario',compact('dataProd'));
+        //
     }
 
     /**
@@ -51,9 +45,15 @@ class usuarioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(usuarioAddRequest $request)
+    public function store(Request $request)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $response = array();
+        $response = direcion_usuario::create( $request->all() );
+        return $response;
     }
 
     /**
@@ -75,12 +75,7 @@ class usuarioController extends Controller
      */
     public function edit($id)
     {
-        $data           = array();
-        $usuario        = User::find($id);
-        $data['ubigeo'] = ubigeo_lima::orderBy('distrito')->lists('distrito','ubigeo');
-        $data['dirs']   = direcion_usuario::where('id_usuario','=',$usuario->id)->orderBy('distrito')->get();
-        $data['usuario']= $usuario;
-        return view('usuario.editUsuario',[ "data" => $data ]);
+        //
     }
 
     /**
@@ -90,18 +85,9 @@ class usuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(usuarioUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        #User data
-        $id_user    = Auth::User()->id;
-        $user       = Auth::User()->user;
-        #
-        $data = User::find( $id );
-        $data->fill( $request->all() );
-        $data->save();
-        #Personal Log
-        #
-        return redirect::to('/usuario')->with('message','Usuario editado correctamente');
+        //
     }
 
     /**
@@ -112,13 +98,6 @@ class usuarioController extends Controller
      */
     public function destroy($id)
     {
-        #User data
-        $id_user    = Auth::User()->id;
-        $user       = Auth::User()->user;
-        #
-        $data = User::where(['id' => $id])->delete();
-        #Personal Log
-        #
-        return $data;
+        //
     }
 }
