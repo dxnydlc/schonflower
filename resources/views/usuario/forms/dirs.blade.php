@@ -2,7 +2,7 @@
 
 <a href="#" class="btn bg-olive margin btn-xs" data-toggle="modal" data-target="#mdlDir" >Agregar dirección</a>
 
-<table class="table table-bordered">
+<table id="tblDirs" class="table table-bordered">
 	<thead>
 		<tr>
 			<th>Distrito</th>

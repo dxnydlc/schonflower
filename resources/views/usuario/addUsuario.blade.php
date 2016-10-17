@@ -2,7 +2,7 @@
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Editar Usuario
+Schon Flower - Agregar Usuario
 @endsection
 
 @section('losCSS')
@@ -38,7 +38,8 @@ Schon Flower - Editar Usuario
 	<div class=" col-lg-offset-3 col-lg-6  ">
 		<div class="row">
 			<div class="col-md-12">
-				{!!Form::model( $data['usuario'] , [ 'route' => [ 'usuario.update' , $data['usuario']->id ] ,'method'=>'PUT','autocomplete'=>'off' ])!!}
+				{!!Form::open(['route'=>'usuario.store','method'=>'post','autocomplete'=>'off', 'class' => '' ])!!}
+				<input type="hidden" id="token" name="token" value="{{ $data['token'] }}" >
 				<div class="box">
 					<div class="box-header">
 						<h3 class="box-title">Datos del Usuario</h3>
@@ -90,8 +91,9 @@ Schon Flower - Editar Usuario
         <div class="box-body">
 		{!!Form::open(['route'=>'dir_user.store','method'=>'post','autocomplete'=>'off', 'id' => 'frmDir' ])!!}
 		
-		{!!Form::hidden('id_usuario',$data['usuario']->id,['id' => 'id_usuario'])!!}
-		{!!Form::hidden('usuario',$data['usuario']->name,['id' => 'usuario'])!!}
+		{!!Form::hidden('id_usuario',null,['id' => 'id_usuario'])!!}
+		{!!Form::hidden('usuario',null,['id' => 'usuario'])!!}
+		<input type="hidden" id="token" name="token" value="{{ $data['token'] }}" >
 
         	<div class="row">
         		<div class="col-md-6">
@@ -125,6 +127,12 @@ Schon Flower - Editar Usuario
 					    {!!Form::text('telefono',null,['class'=>'form-control'])!!}
 					</div>
         		</div>
+        		<div class="col-md-12">
+	        		<div class="form-group ">
+					{!!Form::label('comentarios','Comentarios :' , ['for' => 'comentarios' ] )!!}
+				    {!!Form::textarea('comentarios',null,['class'=>'form-control','rows' => '2'])!!}
+					</div>
+				</div>
         		<div class="col-md-6"></div>
         	</div>
 		{!!Form::close()!!}	

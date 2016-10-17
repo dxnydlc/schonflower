@@ -31,7 +31,7 @@
 		<div class="form-group col-lg-12 col-md-12 ">
 		{!!Form::label('comentarios','Comentarios :' , ['for' => 'comentarios' ] )!!}
 	    {!!Form::textarea('comentarios',null,['class'=>'form-control','rows' => '2'])!!}
-	</div>
+		</div>
 
 	</div>
 

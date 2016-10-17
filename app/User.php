@@ -14,7 +14,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','apellidos','telefono','tipo'
+        'name', 'email', 'password','apellidos','telefono','tipo','token'
     ];
     protected $dates = ['deleted_at'];
 
@@ -50,6 +50,13 @@ class User extends Authenticatable
                     return 'Usuario';
                     break;
             }
+        }
+    }
+
+    public function setPasswordAttribute($valor)
+    {
+        if( !empty($valor) ){
+           $this->attributes['password'] = \Hash::make( $valor);
         }
     }
 

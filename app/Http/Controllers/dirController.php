@@ -51,8 +51,11 @@ class dirController extends Controller
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
+        $token  = $request['token'];
+        $item   = direcion_usuario::create( $request->all() );
         $response = array();
-        $response = direcion_usuario::create( $request->all() );
+        $response['data']   = direcion_usuario::select('*')->where('token', '=', $token)->whereNull('deleted_at')->orderBy('distrito', 'asc')->get();
+        $response['cant']   = count( $response['data'] );
         return $response;
     }
 
@@ -102,7 +105,7 @@ class dirController extends Controller
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
-        $data = productos::where(['id' => $id])->delete();
+        $data = direcion_usuario::where(['id' => $id])->delete();
         #Personal Log
         #
         return $data;

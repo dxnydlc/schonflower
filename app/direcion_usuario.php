@@ -13,7 +13,7 @@ class direcion_usuario extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-    	'id_usuario','usuario','ubigeo','distrito','direccion','piso','interior','telefono','comentarios'
+    	'id_usuario','usuario','ubigeo','distrito','direccion','piso','interior','telefono','comentarios','token'
     ];
     protected $dates = ['deleted_at'];
 

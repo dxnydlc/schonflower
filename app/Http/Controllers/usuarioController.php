@@ -11,6 +11,7 @@ use shonflower\Http\Controllers\Controller;
 use Session;
 use Redirect;
 use Auth;
+use DB;
 use Carbon;
 use shonflower\productos;
 use shonflower\categoria;
@@ -42,7 +43,17 @@ class usuarioController extends Controller
      */
     public function create()
     {
-        //
+        $data = array();
+        $data['dirs'] = array();
+        $data['usuario'] = array();
+        $data['ubigeo'] = ubigeo_lima::orderBy('distrito')->lists('distrito','ubigeo');
+        $mytime = Carbon\Carbon::now('America/Lima');
+        $mytime->toDateString();
+        $token = \Hash::make( $mytime->toDateTimeString() );
+        $data['token'] = $token;
+        #$data['categoria']   = categoria::orderBy('nombre')->lists('nombre','id');
+        #
+        return view('usuario.addUsuario',compact('data'));
     }
 
     /**
@@ -53,7 +64,21 @@ class usuarioController extends Controller
      */
     public function store(usuarioAddRequest $request)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $data = User::create( $request->all() );
+
+        #Ahora vamos a unir las direcciones con el id del usuario
+        $token      = $data->token;
+        $id_usuario = $data->id;
+        $nombre     = $data->name.' '.$data->apellidos;
+        DB::table('direcion_usuario')
+            ->where('token', $token)
+            ->update([ 'id_usuario' => $id_usuario ,'usuario' => $nombre ]);
+
+        return redirect::to('/usuario')->with('message','Usuario creado correctamente');
     }
 
     /**
