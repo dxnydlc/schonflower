@@ -1,8 +1,8 @@
 
-var _servicio = 'http://localhost:8000/menu/';
-var _srvProd  = 'http://localhost:8000/prod_by_categ';
-var _srvProdData= 'http://localhost:8000/prod_by_id';
-var _srvDetalle= 'http://localhost:8000/det_menu/';
+var _servicio 		= _URL_HOME+'menu/';
+var _srvProd  		= _URL_HOME+'prod_by_categ';
+var _srvProdData	= _URL_HOME+'prod_by_id';
+var _srvDetalle		= _URL_HOME+'det_menu/';
 
 (function($){
 	$(document).ready(function()

@@ -2,10 +2,13 @@
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Agregar Categorias
+Schon Flower - Agregar Orden Manual
 @endsection
 
 @section('losCSS')
+	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
+	{!!Html::style('plugins/date_picker/css/bootstrap-datepicker.css')!!}
+
 	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
 
 	<script> var _URL_HOME = '{{ URL_HOME }}'; </script>
@@ -34,23 +37,37 @@ Schon Flower - Agregar Categorias
     @include('alertas.usuario')
 
 <div class="row">
-	<div class=" col-lg-offset-1 col-lg-10  ">
+	<div class=" col-lg-12  ">
+		{!!Form::open(['route'=>'categoria.store','method'=>'post','autocomplete'=>'off', 'class' => '' ])!!}
 		<div class="row">
-			<div class="col-md-12">
-			
-			{!!Form::open(['route'=>'categoria.store','method'=>'post','autocomplete'=>'off', 'class' => '' ])!!}
+			<div class="col-md-6">
+				<div class="box box-success">
+					<div class="box-header">
+						<h3 class="box-title">Datos del documento</h3>
+					</div>
+					<div class="box-body">
+						<!-- Contenido aqui -->
+                        @include('orden.forms.doc')
+					</div>
+				</div>
+			</div>
+			<!-- /col-md-6 -->
 
+			<div class="col-md-6">
 				<div class="box box-success">
 					<div class="box-header">
 						<h3 class="box-title">Datos del cliente</h3>
 					</div>
 					<div class="box-body">
 						<!-- Contenido aqui -->
-                        	@include('orden.forms.form')
+                        @include('orden.forms.form')
 					</div>
 				</div>
+			</div>
+			<!-- /col-md-6 -->
 
-				<div class="box box-success">
+			<div class="col-md-6">
+				<div id="facturaFrame" class="box box-success" style="display:none" >
 					<div class="box-header">
 						<h3 class="box-title">Datos Factura</h3>
 					</div>
@@ -59,6 +76,15 @@ Schon Flower - Agregar Categorias
                         	@include('orden.forms.factura')
 					</div>
 				</div>
+			</div>
+			<!-- /col-md-6 -->
+		
+		</div>
+		{!!Form::close()!!}
+
+		<div class="row">
+
+			<div class="col-md-12">
 
 				<div class="box box-success">
 					<div class="box-header">
@@ -119,11 +145,25 @@ Schon Flower - Agregar Categorias
 
 
 			
-			{!!Form::close()!!}
+			
 
 			</div>
 		</div>
 	</div>
 </div>
+
+@endsection
+
+@section('scripts')
+	{!!Html::script('dist/js/alertify/alertify.js')!!}
+	<!-- DatePicker -->
+	{!!Html::script('plugins/date_picker/js/bootstrap-datepicker.js')!!}
+	{!!Html::script('plugins/date_picker/locales/bootstrap-datepicker.es.min.js')!!}
+	
+	<!-- Select2 -->
+	{!!Html::script('plugins/select2/select2.full.min.js')!!}
+
+	<!-- producto -->
+	{!!Html::script('dist/custom/addOrden.js')!!}
 
 @endsection

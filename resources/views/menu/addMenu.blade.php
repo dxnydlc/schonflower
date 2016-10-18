@@ -10,6 +10,8 @@ Schon Flower - Menú
 	
 	{!!Html::style('plugins/select2/select2.min.css')!!}
 
+<script> var _URL_HOME = '{{ URL_HOME }}'; </script>
+
 <script>
 	var _json_pc = {!! $data['json_pc'] !!}
 </script>

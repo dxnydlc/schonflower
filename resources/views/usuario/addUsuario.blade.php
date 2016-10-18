@@ -7,6 +7,9 @@ Schon Flower - Agregar Usuario
 
 @section('losCSS')
 	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
+	{!!Html::style('plugins/date_picker/css/bootstrap-datepicker.css')!!}
+	
+	{!!Html::style('plugins/select2/select2.min.css')!!}
 
 	<script> var _URL_HOME = '{{ URL_HOME }}'; </script>
 
@@ -154,6 +157,12 @@ Schon Flower - Agregar Usuario
 
 @section('scripts')
 	{!!Html::script('dist/js/alertify/alertify.js')!!}
+	<!-- DatePicker -->
+	{!!Html::script('plugins/date_picker/js/bootstrap-datepicker.js')!!}
+	{!!Html::script('plugins/date_picker/locales/bootstrap-datepicker.es.min.js')!!}
+	
+	<!-- Select2 -->
+	{!!Html::script('plugins/select2/select2.full.min.js')!!}
 
 	<!-- producto -->
 	{!!Html::script('dist/custom/editUsuario.js')!!}
