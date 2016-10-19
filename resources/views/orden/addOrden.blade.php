@@ -65,7 +65,9 @@ Schon Flower - Agregar Orden Manual
 				</div>
 			</div>
 			<!-- /col-md-6 -->
-
+		
+		</div>
+		<div class="row">
 			<div class="col-md-6">
 				<div id="facturaFrame" class="box box-success" style="display:none" >
 					<div class="box-header">
@@ -151,6 +153,97 @@ Schon Flower - Agregar Orden Manual
 		</div>
 	</div>
 </div>
+
+<!-- Usuarios -->
+<div class="modal fade" id="mdlUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Buscar Usuario</h4>
+      </div>
+      <div class="modal-body">
+        
+        <div class="box box-success">
+			<div class="box-body">
+				<!-- Contenido aqui -->
+                <div class="row">
+					<div class="col-md-6">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Nombre/correo">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button">Buscar</button>
+							</span>
+						</div><!-- /input-group -->
+					</div><!-- /.col-md-6 -->
+					<div class="col-md-4 col-md-offset-1">
+						<a href="#" class=" btn btn-block btn-success btn-sm " >Agregar usuario</a>
+					</div><!-- /.col-md-5 -->
+		        </div><!-- /row -->
+		        <div class="row">
+		        	<table class=" table table-bordered ">
+		        		<thead>
+		        			<tr>
+		        				<th>#</th>
+		        				<th>Nombre</th>
+		        				<th>Email</th>
+		        				<th>Telefono</th>
+		        			</tr>
+		        		</thead>
+		        		<tbody>
+		        			<tr>
+		        				<td>13</td>
+		        				<td>Eugenio</td>
+		        				<td>eugenio@gmail.com</td>
+		        				<td>1234567</td>
+		        			</tr>
+		        		</tbody>
+		        	</table>
+		        </div><!-- /row -->
+			</div>
+		</div>
+
+
+		<div class="box box-success" style="display:none">
+			<div class="box-header">
+				<h3 class="box-title">Agregar usuario</h3>
+			</div>
+			<div class="box-body">
+				<!-- Contenido aqui -->
+                #
+			</div>
+		</div>
+
+		        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal direcciones -->
+<div class="modal fade" id="mdlDirs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Seleccionar Direccion</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 @endsection
 

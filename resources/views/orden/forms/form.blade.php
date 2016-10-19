@@ -10,7 +10,7 @@
 			<div class="input-group">
 				{!!Form::text('usuario',null,[ 'class' => 'form-control' , 'readonly' => 'readonly' ])!!}
 				<span class="input-group-btn">
-					<button class="btn btn-default" type="button">Buscar</button>
+					<button class="btn btn-default" type="button" data-toggle="modal" data-target="#mdlUser" >Buscar</button>
 				</span>
 			</div>
 			
@@ -30,7 +30,12 @@
 		<div class="form-group col-md-12 ">
 			<i class="fa fa-map-marker margin-r-5"></i>
 			{!!Form::label('direccion','Dirección:' , ['for' => 'direccion' ] )!!}
-		    {!!Form::text('direccion',null,['class'=>'form-control'])!!}
+			<div class="input-group">
+		    	{!!Form::text('direccion',null,[ 'class' => 'form-control' , 'readonly' => 'readonly' ])!!}
+		    	<span class="input-group-btn">
+					<button class="btn btn-default" type="button" data-toggle="modal" data-target="#mdlDirs" >Buscar</button>
+				</span>
+			</div>
 		</div>
 
 		
