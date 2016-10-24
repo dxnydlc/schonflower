@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDirecionUsuariosTable extends Migration
+class CreateDireccionUsuariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class CreateDirecionUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('direcion_usuario', function (Blueprint $table) {
-            /*$table->increments('id');
+        Schema::create('direccion_usuario', function (Blueprint $table) {
+            $table->increments('id');
 
             $table->integer('id_usuario')->nullable();
             $table->string('usuario')->nullable();
@@ -29,7 +29,7 @@ class CreateDirecionUsuariosTable extends Migration
             $table->text('token')->nullable();
             $table->softDeletes();
 
-            $table->timestamps();*/
+            $table->timestamps();
         });
     }
 
@@ -40,6 +40,6 @@ class CreateDirecionUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('direcion_usuario');
+        Schema::drop('direccion_usuario');
     }
 }

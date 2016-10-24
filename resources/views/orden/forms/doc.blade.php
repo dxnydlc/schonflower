@@ -21,6 +21,12 @@
 	    {!!Form::select('forma_pago',[ 'credito' => 'Crédito' , 'efectivo' => 'Efectivo' , 'cortesia' => 'Cortesía' ], 'credito',['class'=>'form-control'])!!}
 	</div>
 
+	<div class="form-group col-md-6 ">
+		{!!Form::label('id_empresa','Empresa (*):' , ['for' => 'id_empresa' ] )!!}
+	    {!!Form::select('id_empresa', $data['empresa'] ,null,[ 'id' => 'id_empresa', 'placeholder'=>'Seleccione','class'=>'form-control combito'])!!}
+	    {!!Form::hidden('empresa',null,['id' => 'empresa'])!!}
+	</div>
+
 	<div class="form-group col-md-12 ">
 			{!!Form::label('comentarios','Comentarios :' , ['for' => 'comentarios' ] )!!}
 		    {!!Form::textarea('comentarios',null,['class'=>'form-control','rows' => '2'])!!}

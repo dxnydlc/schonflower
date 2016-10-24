@@ -11,7 +11,7 @@ use Auth;
 use Carbon;
 use shonflower\productos;
 use shonflower\categoria;
-use shonflower\direcion_usuario;
+use shonflower\direccion_usuario;
 
 
 use shonflower\Http\Requests;
@@ -52,9 +52,9 @@ class dirController extends Controller
         $user       = Auth::User()->user;
         #
         $token  = $request['token'];
-        $item   = direcion_usuario::create( $request->all() );
+        $item   = direccion_usuario::create( $request->all() );
         $response = array();
-        $response['data']   = direcion_usuario::select('*')->where('token', '=', $token)->whereNull('deleted_at')->orderBy('distrito', 'asc')->get();
+        $response['data']   = direccion_usuario::select('*')->where([ ['token', '=', $token],['id_usuario','=',$request['id_usuario']] ])->whereNull('deleted_at')->orderBy('distrito', 'asc')->get();
         $response['cant']   = count( $response['data'] );
         return $response;
     }
@@ -105,7 +105,7 @@ class dirController extends Controller
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
-        $data = direcion_usuario::where(['id' => $id])->delete();
+        $data = direccion_usuario::where(['id' => $id])->delete();
         #Personal Log
         #
         return $data;

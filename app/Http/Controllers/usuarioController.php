@@ -17,7 +17,7 @@ use shonflower\productos;
 use shonflower\categoria;
 use shonflower\User;
 use shonflower\ubigeo_lima;
-use shonflower\direcion_usuario;
+use shonflower\direccion_usuario;
 
 use shonflower\Http\Requests\usuarioAddRequest;
 use shonflower\Http\Requests\usuarioUpdateRequest;
@@ -74,7 +74,7 @@ class usuarioController extends Controller
         $token      = $data->token;
         $id_usuario = $data->id;
         $nombre     = $data->name.' '.$data->apellidos;
-        DB::table('direcion_usuario')
+        DB::table('direccion_usuario')
             ->where('token', $token)
             ->update([ 'id_usuario' => $id_usuario ,'usuario' => $nombre ]);
 
@@ -103,7 +103,7 @@ class usuarioController extends Controller
         $data           = array();
         $usuario        = User::find($id);
         $data['ubigeo'] = ubigeo_lima::orderBy('distrito')->lists('distrito','ubigeo');
-        $data['dirs']   = direcion_usuario::where('id_usuario','=',$usuario->id)->orderBy('distrito')->get();
+        $data['dirs']   = direccion_usuario::where('id_usuario','=',$usuario->id)->orderBy('distrito')->get();
         $data['usuario']= $usuario;
         return view('usuario.editUsuario',[ "data" => $data ]);
     }
@@ -146,4 +146,36 @@ class usuarioController extends Controller
         #
         return $data;
     }
+
+    public function buscar_user( $q )
+    {
+        $data           = array();
+        $data['data']   = User::where('name', 'like', '%'.$q.'%')->orWhere('apellidos', 'like','%'.$q.'%')->get();
+        $data['cant']   = count( $data['data'] );
+        return $data;
+    }
+
+    public function dirs_user( $id_user )
+    {
+        $data           = array();
+        $data['data']   = direccion_usuario::where('id_usuario', '=', $id_user)->get();
+        $data['actual'] = direccion_usuario::where([['actual', '=', '1'],['id_usuario', '=', $id_user]])->whereNull('deleted_at')->get();
+        $data['cant']   = count( $data['data'] );
+        return $data;
+    }
+
+
+    public function set_dirs_user( $id , $id_user )
+    {
+        $data = direccion_usuario::find( $id );
+        #cambiar estado de todos los demas
+        DB::table('direccion_usuario')
+        ->where('id_usuario', $id_user)
+        ->update(['actual' => 0]);
+        $data->actual = 1;
+        $data->save();
+        $data = direccion_usuario::find( $id );
+        #return $data;
+    }
+
 }

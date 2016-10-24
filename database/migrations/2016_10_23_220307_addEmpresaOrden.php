@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCamposOrden extends Migration
+class AddEmpresaOrden extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddCamposOrden extends Migration
     public function up()
     {
         Schema::table('orden_usuario', function (Blueprint $table) {
-            $table->integer('id_dir')->after('telefono')->nullable();
-            $table->string('estado', 100)->after('tipo')->nullable();
+            $table->integer('id_empresa')->after('usuario')->nullable();
+            $table->string('empresa')->after('id_empresa')->nullable();
         });
     }
 

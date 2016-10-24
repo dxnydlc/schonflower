@@ -353,6 +353,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ url('/usuario') }}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
             <li><a href="{{ url('/categoria') }}"><i class="fa fa-circle-o"></i> Categorias</a></li>
+            <li><a href="{{ url('/empresa') }}"><i class="fa fa-circle-o"></i> Empresas</a></li>
             <li><a href="{{ url('/producto') }}"><i class="fa fa-circle-o"></i> Productos</a></li>
             <li><a href="{{ url('/tipo_menu') }}"><i class="fa fa-circle-o"></i> Tipo de Menú</a></li>
             <li><a href="{{ url('/precio_combo') }}"><i class="fa fa-circle-o"></i> Precio combo</a></li>

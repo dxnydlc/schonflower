@@ -47,6 +47,7 @@ var _srvDir = _URL_HOME+'dir_user/';
 				var _data = $('#frmDir').serialize();
 				$.post( _srvDir , _data , function(data, textStatus, xhr) {
 					llenar_tabla( data );
+					$('#mdlDir').modal('hide');
 				},'json');
 			});
 			/*--------------------------------------*/

@@ -101,7 +101,7 @@ class categoriaController extends Controller
         $categoria->save();
         #Personal Log
         #
-        return redirect::to('/categoria')->with('message','Categoria editada correctamente');;
+        return redirect::to('/categoria')->with('message','Categoria editada correctamente');
     }
 
     /**

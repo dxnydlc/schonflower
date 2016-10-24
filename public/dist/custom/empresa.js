@@ -1,5 +1,5 @@
 
-var _servicio = _URL_HOME+'categoria/';
+var _servicio = _URL_HOME+'empresa/';
 
 (function($){
 	$(document).ready(function()
@@ -26,4 +26,5 @@ var _servicio = _URL_HOME+'categoria/';
 		});
 
 })(jQuery);
+
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCamposOrden extends Migration
+class AddDefectoDir extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class AddCamposOrden extends Migration
      */
     public function up()
     {
-        Schema::table('orden_usuario', function (Blueprint $table) {
-            $table->integer('id_dir')->after('telefono')->nullable();
-            $table->string('estado', 100)->after('tipo')->nullable();
+        Schema::table('direcion_usuario', function (Blueprint $table) {
+            #$table->char('actual', 4)->after('usuario')->default('0');
         });
     }
 
@@ -25,7 +24,7 @@ class AddCamposOrden extends Migration
      */
     public function down()
     {
-        Schema::table('orden_usuario', function (Blueprint $table) {
+        Schema::table('direcion_usuario', function (Blueprint $table) {
             //
         });
     }

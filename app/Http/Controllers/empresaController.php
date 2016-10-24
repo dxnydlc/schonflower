@@ -7,25 +7,17 @@ use Illuminate\Http\Request;
 use shonflower\Http\Requests;
 use shonflower\Http\Controllers\Controller;
 
-
 use Session;
 use Redirect;
 use Auth;
 use Carbon;
-use DB;
 
-use shonflower\menu;
-use shonflower\productos;
-use shonflower\tipo_menu;
-use shonflower\categoria;
+use shonflower\Http\Requests\empresaAddRequest;
+use shonflower\Http\Requests\empresaUpdateRequest;
+
 use shonflower\empresa;
 
-use shonflower\menu_hoy;
-use shonflower\detalle_menu;
-use shonflower\precio_combo;
-
-
-class ordenManualController extends Controller
+class empresaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,8 +26,9 @@ class ordenManualController extends Controller
      */
     public function index()
     {
-        $dataMenu = array();
-        return view('orden.homeOrden',compact('dataMenu'));
+        $dataEmpresa = array();
+        $dataEmpresa = empresa::paginate(5);
+        return view('empresa.homeEmpresa',compact('dataEmpresa'));
     }
 
     /**
@@ -45,15 +38,7 @@ class ordenManualController extends Controller
      */
     public function create()
     {
-        $mytime = Carbon\Carbon::now('America/Lima');
-        $mytime->toDateString();
-        $token = \Hash::make( $mytime->toDateTimeString() );
-        #
-        $data = array();
-        $data['empresa']    = empresa::orderBy('nombre')->lists('nombre','id');
-        $data['fecha']      = $mytime->format('d/m/Y');
-        $data['token']      = $token;
-        return view('orden.addOrden',compact('data'));
+        return view('empresa.addEmpresa');
     }
 
     /**
@@ -62,9 +47,15 @@ class ordenManualController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(empresaAddRequest $request)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $categ = empresa::create( $request->all() );
+
+        return redirect::to('/empresa')->with('message','Empresa creada correctamente');
     }
 
     /**
@@ -86,7 +77,8 @@ class ordenManualController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = empresa::find($id);
+        return view('empresa.editEmpresa',["data" => $data ]);
     }
 
     /**
@@ -96,9 +88,18 @@ class ordenManualController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(empresaUpdateRequest $request, $id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $empresa = empresa::find( $id );
+        $empresa->fill( $request->all() );
+        $empresa->save();
+        #Personal Log
+        #
+        return redirect::to('/empresa')->with('message','Empresa editada correctamente');
     }
 
     /**
@@ -109,6 +110,13 @@ class ordenManualController extends Controller
      */
     public function destroy($id)
     {
-        //
+        #User data
+        $id_user    = Auth::User()->id;
+        $user       = Auth::User()->user;
+        #
+        $data = empresa::where( [ 'id' => $id ] )->delete();
+        #Personal Log
+        #
+        return $data;
     }
 }

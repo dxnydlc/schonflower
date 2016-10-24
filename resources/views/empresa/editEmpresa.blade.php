@@ -2,20 +2,20 @@
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Categorias
+Schon Flower - Empresa
 @endsection
 
 @section('header-page')
 <h1>
-	Categorías
-<small>Editar una nueva categoría para clasificar un producto</small>
+	Empresa
+<small>Editar una nueva empresa para clasificar un producto</small>
 </h1>
 @endsection
 
 @section('breadcrumb-page')
 	<li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-	<li><a href="{{ url('/categoria') }}"><i class="fa fa-dashboard"></i> Categoría</a></li>
-	<li class="active">Agregar Categoría</li>
+	<li><a href="{{ url('/empresa') }}"><i class="fa fa-dashboard"></i> Empresa</a></li>
+	<li class="active">Agregar Empresa</li>
 @endsection
 
 
@@ -32,12 +32,12 @@ Schon Flower - Categorias
 			<div class="col-md-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Datos de la categoría a editar</h3>
+						<h3 class="box-title">Datos de la empresa a editar</h3>
 					</div>
 					<div class="box-body">
 						<!-- Contenido aqui -->
-						{!!Form::model ($categoria , [ 'route' => ['categoria.update' , $categoria->id ], 'method' => 'PUT' ,'autocomplete'=>'off'])!!}
-                        	@include('categoria.forms.form')
+						{!!Form::model ($data , [ 'route' => ['empresa.update' , $data->id ], 'method' => 'PUT' ,'autocomplete'=>'off'])!!}
+                        	@include('empresa.forms.form')
                         	<div class="box-footer">
 				                <button type="submit" class="btn btn-primary">Guardar</button>
 				            </div>

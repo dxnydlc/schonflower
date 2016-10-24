@@ -30,6 +30,9 @@ Route::get('/test', 'test@test');
 #Categoria
 Route::resource('categoria','categoriaController');
 
+#Empresa
+Route::resource('empresa','empresaController');
+
 #Producto
 Route::resource('producto','productoController');
 Route::get('prod_by_categ/{categ}','productoController@prod_by_categ');
@@ -55,7 +58,14 @@ Route::resource('orden_manual','ordenManualController');
 #CRUD usuario
 Route::resource('usuario','usuarioController');
 
+#Buscar Usuario
+Route::get('buscar_user/{q}', 'usuarioController@buscar_user');
+
+#Obtener las direcciones de usuario
+Route::get('get_dirs_user/{id_user}', 'usuarioController@dirs_user');
+
 #CRUD direcciones usuario
 Route::resource('dir_user','dirController');
 
-
+#Set dir usuario
+Route::resource('set_dir_user/{id}/{id_user}','usuarioController@set_dirs_user');

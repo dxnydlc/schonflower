@@ -2,26 +2,26 @@
 @extends('layouts.principal')
 
 @section('titulo')
-Schon Flower - Categorias
+Schon Flower - Empresas
 @endsection
 
 @section('losCSS')
 	{!!Html::style('dist/js/alertify/css/alertify.css')!!}
 
 	<script> var _URL_HOME = '{{ URL_HOME }}'; </script>
-	
+
 @endsection
 
 @section('header-page')
 <h1>
-	Categorías
-<small>Categorías de los platos a la venta</small>
+	Empresa
+<small>Empresa de los platos a la venta</small>
 </h1>
 @endsection
 
 @section('breadcrumb-page')
 	<li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-	<li class="active">Categorías</li>
+	<li class="active">Empresa</li>
 @endsection
 
 @section('content')
@@ -38,7 +38,7 @@ Schon Flower - Categorias
 			<div class="box">
 				<div class="box-header"></div>
 				<div class="box-body">
-					<a href="{{ url('/categoria/create') }}" class="btn btn-app">
+					<a href="{{ url('/empresa/create') }}" class="btn btn-app">
 						<i class="fa fa-plus"></i>Agregar
 					</a>
 				</div>
@@ -50,7 +50,7 @@ Schon Flower - Categorias
 		<div class="col-xs-12">
 		  <div class="box">
 			<div class="box-header">
-			  <h3 class="box-title">Listando las categorías actuales</h3>
+			  <h3 class="box-title">Listando las empresas actuales</h3>
 
 			  <div class="box-tools">
 				<div class="input-group input-group-sm" style="width: 150px;">
@@ -71,25 +71,27 @@ Schon Flower - Categorias
 			  		<tr>
 					  <th>ID</th>
 					  <th>Nombre</th>
+					  <th>RUC</th>
 					  <th>Creado</th>
 					</tr>
 			  	</thead>
 			  	<tbody>
-			  		@foreach($dataCategorias as $categoria)
+			  		@foreach($dataEmpresa as $rs)
 	                    <tr>
-	                        <th scope="row">{{$categoria->id}}</th>
+	                        <th scope="row">{{$rs->id}}</th>
 	                        <td>
-	                            {!!link_to_route('categoria.edit', $title  = $categoria->nombre, $parameters =$categoria->id, $attributes = ['class'=>'btn-link '] )!!}
+	                            {!!link_to_route('empresa.edit', $title  = $rs->nombre, $parameters =$rs->id, $attributes = ['class'=>'btn-link '] )!!}
 	                        </td>
-	                        <td>{{$categoria->created_at}}</td>
+	                        <td>{{$rs->ruc}}</td>
+	                        <td>{{$rs->created_at}}</td>
 	                        <td>
-	                            {!!link_to_route('categoria.edit', $title  = 'Anular', $parameters =$categoria->id, $attributes = ['class'=>'btn-link delCateg ','id'=>$categoria->id,'alt' => $categoria->nombre] )!!}
+	                            {!!link_to_route('empresa.edit', $title  = 'Anular', $parameters =$rs->id, $attributes = ['class'=>'btn-link delCateg ','id'=>$rs->id,'alt' => $rs->nombre] )!!}
 	                        </td>
 	                    </tr>
 	                    @endforeach
 			  	</tbody>
 			  </table>
-			  {!!$dataCategorias->render()!!}
+			  {!!$dataEmpresa->render()!!}
 			</div>
 			<!-- /.box-body -->
 		  </div>
@@ -105,5 +107,5 @@ Schon Flower - Categorias
 	{!!Html::script('dist/js/alertify/alertify.js')!!}
 	
 	<!-- Categoria -->
-	{!!Html::script('dist/custom/categoria.js')!!}
+	{!!Html::script('dist/custom/empresa.js')!!}
 @endsection

@@ -40,6 +40,7 @@ Schon Flower - Agregar Orden Manual
 	<div class=" col-lg-12  ">
 		{!!Form::open(['route'=>'categoria.store','method'=>'post','autocomplete'=>'off', 'class' => '' ])!!}
 		<div class="row">
+
 			<div class="col-md-6">
 				<div class="box box-success">
 					<div class="box-header">
@@ -65,7 +66,7 @@ Schon Flower - Agregar Orden Manual
 				</div>
 			</div>
 			<!-- /col-md-6 -->
-		
+
 		</div>
 		<div class="row">
 			<div class="col-md-6">
@@ -80,12 +81,10 @@ Schon Flower - Agregar Orden Manual
 				</div>
 			</div>
 			<!-- /col-md-6 -->
-		
 		</div>
 		{!!Form::close()!!}
 
 		<div class="row">
-
 			<div class="col-md-12">
 
 				<div class="box box-success">
@@ -144,13 +143,9 @@ Schon Flower - Agregar Orden Manual
 			            </div>
 					</div>
 				</div>
-
-
-			
-			
-
 			</div>
 		</div>
+
 	</div>
 </div>
 
@@ -170,9 +165,9 @@ Schon Flower - Agregar Orden Manual
                 <div class="row">
 					<div class="col-md-6">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Nombre/correo">
+							<input id="query_user" type="text" class="form-control" placeholder="Nombres">
 							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">Buscar</button>
+								<button id="buscar_usuario" class="btn btn-default" type="button">Buscar</button>
 							</span>
 						</div><!-- /input-group -->
 					</div><!-- /.col-md-6 -->
@@ -181,7 +176,7 @@ Schon Flower - Agregar Orden Manual
 					</div><!-- /.col-md-5 -->
 		        </div><!-- /row -->
 		        <div class="row">
-		        	<table class=" table table-bordered ">
+		        	<table id="tblUsers" class=" table table-bordered ">
 		        		<thead>
 		        			<tr>
 		        				<th>#</th>
@@ -192,10 +187,7 @@ Schon Flower - Agregar Orden Manual
 		        		</thead>
 		        		<tbody>
 		        			<tr>
-		        				<td>13</td>
-		        				<td>Eugenio</td>
-		        				<td>eugenio@gmail.com</td>
-		        				<td>1234567</td>
+		        				<td colspan="4" class=" text-light-blue text-center" >Ingrese un nombre para buscar</td>
 		        			</tr>
 		        		</tbody>
 		        	</table>
@@ -234,7 +226,22 @@ Schon Flower - Agregar Orden Manual
         <h4 class="modal-title" id="myModalLabel">Seleccionar Direccion</h4>
       </div>
       <div class="modal-body">
-        ...
+        <table id="tblDir" class="table table-bordered">
+        	<thead>
+        		<tr>
+        			<th>Distrito</th>
+        			<th>Dirección</th>
+        			<th>Piso</th>
+        			<th>Interior</th>
+        			<th>Teléfono</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr>
+        			<td colspan="5" class=" text-light-blue text-center" >Seleccione usuario</td>
+        		</tr>
+        	</tbody>
+        </table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

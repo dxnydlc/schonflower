@@ -13,7 +13,7 @@ class AddTokenDir extends Migration
     public function up()
     {
         Schema::table('direcion_usuario', function (Blueprint $table) {
-            $table->text('token')->after('comentarios')->nullable();
+            #$table->text('token')->after('comentarios')->nullable();
         });
     }
 
