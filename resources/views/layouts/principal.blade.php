@@ -8,7 +8,7 @@
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
+  <!-- Bootstrap 3.3.6 --> 
   {!!Html::style('bootstrap/css/bootstrap.min.css')!!}
   
   <!-- Font Awesome -->
@@ -73,7 +73,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -86,7 +86,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ url('dist/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -98,7 +98,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ url('dist/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -110,7 +110,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ url('dist/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -122,7 +122,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="{{ url('dist/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -255,13 +255,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                 <p>
                   {{ Auth::user()->name }} - Web Developer
@@ -310,7 +310,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -328,10 +328,14 @@
         </div>
       </form>
       <!-- /.search form -->
+<?php
+$current_menu     = Session::get('current_menu');
+$current_menu_opt = Session::get('current_menu_opt');
+?>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        <li class="header">Opciónes</li>
+        <li class=" treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -343,7 +347,7 @@
             <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="treeview <?php if( $current_menu == 'mantenimiento' ){ echo 'active'; } ?> ">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Mantenimiento</span>
             <span class="pull-right-container">
@@ -351,12 +355,36 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('/usuario') }}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-            <li><a href="{{ url('/categoria') }}"><i class="fa fa-circle-o"></i> Categorias</a></li>
-            <li><a href="{{ url('/empresa') }}"><i class="fa fa-circle-o"></i> Empresas</a></li>
-            <li><a href="{{ url('/producto') }}"><i class="fa fa-circle-o"></i> Productos</a></li>
-            <li><a href="{{ url('/tipo_menu') }}"><i class="fa fa-circle-o"></i> Tipo de Menú</a></li>
-            <li><a href="{{ url('/precio_combo') }}"><i class="fa fa-circle-o"></i> Precio combo</a></li>
+            <li>
+              <a href="{{ url('/usuario') }}">
+                <i class="fa <?php if( $current_menu_opt == 'usuario' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?> "></i> Usuarios
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/categoria') }}">
+                <i class="fa <?php if( $current_menu_opt == 'categoria' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?> "></i> Categorias
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/empresa') }}">
+                <i class="fa <?php if( $current_menu_opt == 'empresa' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?> "></i> Empresas
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/producto') }}">
+                <i class="fa <?php if( $current_menu_opt == 'producto' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?> "></i> Productos
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/tipo_menu') }}">
+                <i class="fa <?php if( $current_menu_opt == 'tipo_menu' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?> "></i> Tipo de Menú
+              </a>
+            </li>
+            <li>
+              <a href="{{ url('/precio_combo') }}">
+                <i class="fa <?php if( $current_menu_opt == 'categoria' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?> "></i> Precio combo
+              </a>
+            </li>
           </ul>
         </li>
 
@@ -369,6 +397,18 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ url('/menu') }}"><i class="fa fa-circle-o"></i> Menú hoy</a></li>
+          </ul>
+        </li>
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-hand-scissors-o"></i> <span>Promociones</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/promo_combo') }}"><i class="fa fa-circle-o"></i> Combos</a></li>
           </ul>
         </li>
 

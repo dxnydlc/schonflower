@@ -15,6 +15,7 @@ use Carbon;
 
 use shonflower\tipo_menu;
 
+
 use shonflower\Http\Requests\addTipoMenuRequest;
 use shonflower\Http\Requests\updateTipoMenuRequest;
 
@@ -26,6 +27,14 @@ class tipoMenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        #para marcar el menu
+        Session::set('current_menu','mantenimiento');
+        Session::set('current_menu_opt','tipo_menu');
+    }
+
     public function index()
     {
         $dataTipoMenu = array();

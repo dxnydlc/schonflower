@@ -29,6 +29,14 @@ class usuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        #para marcar el menu
+        Session::set('current_menu','mantenimiento');
+        Session::set('current_menu_opt','usuario');
+    }
+
     public function index()
     {
         $dataProd = array();
@@ -175,7 +183,13 @@ class usuarioController extends Controller
         $data->actual = 1;
         $data->save();
         $data = direccion_usuario::find( $id );
-        #return $data;
+        $response = array();
+        if( count($data) > 0 )
+        {
+            $response['dir'] = $data->direccion.' piso: '.$data->piso.' interior: '.$data->interior .' - '.$data->distrito;
+            $response['id']  = $data->id;
+        }
+        return $response;
     }
 
 }

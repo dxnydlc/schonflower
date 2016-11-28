@@ -11,61 +11,65 @@
 |
 */
 
-#cambiar en produccion
-define("URL_HOME","http://localhost:8000/");
+	#cambiar en produccion
+	define("URL_HOME","http://localhost:8000/");
 
+	Route::get('/', function () {
+	    return view('welcome');
+	});
 
+	Route::auth();
 
+	Route::get('/home', 'HomeController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+	Route::get('/test', 'test@test');
 
-Route::auth();
+	#Categoria
+	Route::resource('categoria','categoriaController');
 
-Route::get('/home', 'HomeController@index');
+	#Empresa
+	Route::resource('empresa','empresaController');
 
-Route::get('/test', 'test@test');
+	#Producto
+	Route::resource('producto','productoController');
+	Route::get('prod_by_categ/{categ}','productoController@prod_by_categ');
 
-#Categoria
-Route::resource('categoria','categoriaController');
+	#Tipo Menu
+	Route::resource('tipo_menu','tipoMenuController');
 
-#Empresa
-Route::resource('empresa','empresaController');
+	#Menu
+	Route::resource('menu','menuController');
 
-#Producto
-Route::resource('producto','productoController');
-Route::get('prod_by_categ/{categ}','productoController@prod_by_categ');
+	#Detalle Menu
+	Route::resource('det_menu','detalleMenuController');
 
-#Tipo Menu
-Route::resource('tipo_menu','tipoMenuController');
+	#Precio combo
+	Route::resource('precio_combo','precioComboController');
 
-#Menu
-Route::resource('menu','menuController');
+	#Buscar producto por su ID
+	Route::get('prod_by_id/{id}','productoController@find_prod');
 
-#Detalle Menu
-Route::resource('det_menu','detalleMenuController');
+	#Pedido manual
+	Route::resource('orden_manual','ordenManualController');
 
-#Precio combo
-Route::resource('precio_combo','precioComboController');
+	#CRUD usuario
+	Route::resource('usuario','usuarioController');
 
-#Buscar producto por su ID
-Route::get('prod_by_id/{id}','productoController@find_prod');
+	#Buscar Usuario
+	Route::get('buscar_user/{q}', 'usuarioController@buscar_user');
 
-#Pedido manual
-Route::resource('orden_manual','ordenManualController');
+	#Obtener las direcciones de usuario
+	Route::get('get_dirs_user/{id_user}', 'usuarioController@dirs_user');
 
-#CRUD usuario
-Route::resource('usuario','usuarioController');
+	#CRUD direcciones usuario
+	Route::resource('dir_user','dirController');
 
-#Buscar Usuario
-Route::get('buscar_user/{q}', 'usuarioController@buscar_user');
+	#Set dir usuario
+	Route::get('set_dir_user/{id}/{id_user}','usuarioController@set_dirs_user');
 
-#Obtener las direcciones de usuario
-Route::get('get_dirs_user/{id_user}', 'usuarioController@dirs_user');
+	#Promociones/combos
+	Route::resource('promo_combo','promoController');
 
-#CRUD direcciones usuario
-Route::resource('dir_user','dirController');
+	#Detalle de promocion
+	Route::resource('det_promo_combo','detallePromocion');
 
-#Set dir usuario
-Route::resource('set_dir_user/{id}/{id_user}','usuarioController@set_dirs_user');

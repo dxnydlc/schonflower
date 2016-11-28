@@ -24,6 +24,14 @@ class empresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        #para marcar el menu
+        Session::set('current_menu','mantenimiento');
+        Session::set('current_menu_opt','empresa');
+    }
+
     public function index()
     {
         $dataEmpresa = array();

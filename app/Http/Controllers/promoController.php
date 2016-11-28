@@ -7,16 +7,21 @@ use Illuminate\Http\Request;
 use shonflower\Http\Requests;
 use shonflower\Http\Controllers\Controller;
 
-use shonflower\detalle_menu;
+use shonflower\Http\Requests\promoRequest;
 
 
 use Session;
 use Redirect;
 use Auth;
 use Carbon;
+use DB;
 
+use shonflower\tipo_menu;
+use shonflower\promocion;
+use shonflower\categoria;
+use shonflower\promocion_detalle;
 
-class detalleMenuController extends Controller
+class promoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +30,9 @@ class detalleMenuController extends Controller
      */
     public function index()
     {
-        //
+        $data = array();
+        $data = promocion::paginate(5);
+        return view('promocion.homePromocion',compact('data'));
     }
 
     /**
@@ -35,7 +42,17 @@ class detalleMenuController extends Controller
      */
     public function create()
     {
-        //
+        #
+        $mytime = Carbon\Carbon::now('America/Lima');
+        $mytime->toDateString();
+        $token = \Hash::make( $mytime->toDateTimeString() );
+        #
+        $data = array();
+        $data['categoria']  = categoria::orderBy('nombre')->lists('nombre','id');
+        $data['fecha']      = $mytime->format('d/m/Y');
+        $data['token']      = $token;
+        return view('promocion.addPromocion',compact('data'));
+        #
     }
 
     /**
@@ -44,7 +61,7 @@ class detalleMenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(promoRequest $request)
     {
         #User data
         $id_user    = Auth::User()->id;
@@ -52,12 +69,16 @@ class detalleMenuController extends Controller
         #
         #return $request->all();
         #
-        $token  = $request['token'];
-        $item   = detalle_menu::create( $request->all() );
-        $data   = array();
-        $data['data']   = detalle_menu::select('*')->where('token', '=', $token)->whereNull('deleted_at')->orderBy('categoria', 'asc')->get();
-        $data['cant']   = count( $data['data'] );
-        return $data;
+        $token      = $request['token'];
+        $promo      = promocion::create( $request->all() );
+        $id_menu    = $promo->id;
+
+        #Uniendo detalle con encabezado
+        DB::table('promocion_detalles')
+            ->where('token', $token)
+            ->update(['id_promo' => $id_menu]);
+
+        return redirect::to('/promo_combo')->with('message','Promoción creada correctamente');
     }
 
     /**
@@ -102,14 +123,6 @@ class detalleMenuController extends Controller
      */
     public function destroy($id)
     {
-        #User data
-        $id_user    = Auth::User()->id;
-        $user       = Auth::User()->user;
-        #
-        $data = detalle_menu::where(['id' => $id])->delete();
-        #$data = detalle_menu::destroy( $id );
-        #Personal Log
-        #
-        return $data;
+        //
     }
 }

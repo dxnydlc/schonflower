@@ -26,6 +26,14 @@ class categoriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        #para marcar el menu
+        Session::set('current_menu','mantenimiento');
+        Session::set('current_menu_opt','categoria');
+    }
+
+
     public function index()
     {
         $dataCategorias = array();

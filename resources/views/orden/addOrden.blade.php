@@ -264,6 +264,6 @@ Schon Flower - Agregar Orden Manual
 	{!!Html::script('plugins/select2/select2.full.min.js')!!}
 
 	<!-- producto -->
-	{!!Html::script('dist/custom/addOrden.js')!!}
+	{!!Html::script('dist/custom/addOrden.js?v=434')!!}
 
 @endsection

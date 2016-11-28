@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use shonflower\Http\Requests;
 use shonflower\Http\Controllers\Controller;
 
-use shonflower\detalle_menu;
+use shonflower\promocion_detalle;
 
 
 use Session;
@@ -16,7 +16,7 @@ use Auth;
 use Carbon;
 
 
-class detalleMenuController extends Controller
+class detallePromocion extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -53,9 +53,9 @@ class detalleMenuController extends Controller
         #return $request->all();
         #
         $token  = $request['token'];
-        $item   = detalle_menu::create( $request->all() );
+        $item   = promocion_detalle::create( $request->all() );
         $data   = array();
-        $data['data']   = detalle_menu::select('*')->where('token', '=', $token)->whereNull('deleted_at')->orderBy('categoria', 'asc')->get();
+        $data['data']   = promocion_detalle::select('*')->where('token', '=', $token)->whereNull('deleted_at')->get();
         $data['cant']   = count( $data['data'] );
         return $data;
     }
@@ -106,7 +106,7 @@ class detalleMenuController extends Controller
         $id_user    = Auth::User()->id;
         $user       = Auth::User()->user;
         #
-        $data = detalle_menu::where(['id' => $id])->delete();
+        $data = promocion_detalle::where(['id' => $id])->delete();
         #$data = detalle_menu::destroy( $id );
         #Personal Log
         #

@@ -92,7 +92,8 @@ var _get_usr_dir = _URL_HOME+'get_dirs_user/';
 				event.preventDefault();
 				var _id = $(this).attr('id-dir'), _id_user = $(this).attr('id-user');
 				$.get( _URL_HOME+'set_dir_user/'+_id+'/'+_id_user, function(data) {
-					//console.log( data );
+					$('#id_dir').val( data.id );
+					$('#direccion').val( data.dir );
 					$('#mdlDirs').modal('hide');
 				},'json');
 			});
