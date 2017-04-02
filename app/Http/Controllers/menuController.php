@@ -35,6 +35,10 @@ class menuController extends Controller
      */
     public function index()
     {
+        #para marcar el menu
+        Session::set('current_menu','menu');
+        Session::set('current_menu_opt','hoy');
+
         $dataMenu = array();
         $dataMenu = menu_hoy::orderBy('id', 'desc')->paginate(10);
         return view('menu.homeMenu',compact('dataMenu'));

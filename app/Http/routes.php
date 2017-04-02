@@ -73,3 +73,7 @@
 	#Detalle de promocion
 	Route::resource('det_promo_combo','detallePromocion');
 
+	#Detalle de orden manual
+	Route::resource('det_orden_manual','detalleOrden');
+
+

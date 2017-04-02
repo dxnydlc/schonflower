@@ -1,0 +1,1728 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"style",
+				"style\tAttr"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"bot",
+				"bottom"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"pre",
+				"preventDefault"
+			],
+			[
+				"data",
+				"data_menu"
+			],
+			[
+				"menu",
+				"menu_hoy"
+			],
+			[
+				"serial",
+				"serialize\t.serialize()"
+			],
+			[
+				"key",
+				"keypress\t.keypress()"
+			],
+			[
+				"json",
+				"_json_pc"
+			],
+			[
+				"created_",
+				"created_at"
+			],
+			[
+				"_",
+				"_url"
+			],
+			[
+				"dc",
+				"document"
+			],
+			[
+				"get",
+				"get\t$.get()"
+			],
+			[
+				"seria",
+				"serialize\t.serialize()"
+			],
+			[
+				"id_pro",
+				"id_producto"
+			],
+			[
+				"prodc",
+				"producto"
+			],
+			[
+				"id",
+				"id_proveedor"
+			],
+			[
+				"fecha",
+				"fecha"
+			],
+			[
+				"fecha_",
+				"fecha_hoy"
+			],
+			[
+				"id_use",
+				"id_user"
+			],
+			[
+				"foreac",
+				"foreach\tforeach …"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"id_",
+				"id_categoria"
+			],
+			[
+				"pubi",
+				"public"
+			],
+			[
+				"_tota",
+				"_totalDoc"
+			],
+			[
+				"_tot",
+				"_totalDoc"
+			],
+			[
+				"tota",
+				"totalDoc"
+			],
+			[
+				"detall",
+				"detalle_venta"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"parte",
+				"parte_entrada"
+			],
+			[
+				"provee",
+				"proveedores"
+			],
+			[
+				"mouse",
+				"mouseover\t.mouseover()"
+			],
+			[
+				"remove",
+				"removeClass\t.removeClass()"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"add",
+				"addClass\t.addClass()"
+			],
+			[
+				"cone",
+				"clone\t.clone()"
+			],
+			[
+				"all",
+				"allProductos"
+			],
+			[
+				"produc",
+				"productos"
+			],
+			[
+				"prdo",
+				"producto"
+			],
+			[
+				"prod",
+				"producto"
+			],
+			[
+				"dat",
+				"dataCategoria"
+			],
+			[
+				"hab",
+				"habitacion"
+			],
+			[
+				"habita",
+				"habitaciones"
+			],
+			[
+				"res",
+				"request"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/Repositorios/college/web/index.html",
+			"settings":
+			{
+				"buffer_size": 21198,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "index.html"
+			}
+		},
+		{
+			"file": "/D/Repositorios/college/web/test.html",
+			"settings":
+			{
+				"buffer_size": 17392,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "test.html"
+			}
+		},
+		{
+			"file": "/D/Repositorios/college/web/dist/js/custom.js",
+			"settings":
+			{
+				"buffer_size": 8029,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "custom.js"
+			}
+		},
+		{
+			"file": "/D/Repositorios/college/web/dist/css/custom.css",
+			"settings":
+			{
+				"buffer_size": 20377,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "customs.css"
+			}
+		},
+		{
+			"file": "/D/Repositorios/college/web/dist/libs/tiny/responsive/tinycarousel.css",
+			"settings":
+			{
+				"buffer_size": 1075,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
+			";",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Repositorios/college/web",
+		"/D/Repositorios/college/web/dist",
+		"/D/Repositorios/college/web/dist/css",
+		"/D/Repositorios/college/web/dist/js",
+		"/D/Repositorios/college/web/dist/libs",
+		"/D/Repositorios/college/web/dist/libs/carrusel",
+		"/D/Repositorios/college/web/dist/libs/tiny",
+		"/D/Repositorios/college/web/dist/libs/tiny/responsive"
+	],
+	"file_history":
+	[
+		"/D/Repositorios/college/web/dist/libs/carrusel/jcarousel.basic.js",
+		"/D/Repositorios/college/web/dist/libs/tiny/responsive/tinycarousel.css",
+		"/D/Repositorios/schonflower/app/Http/routes.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/detalleOrden.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_12_03_175939_create_detalle_ordens_table.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/detalleMenuController.php",
+		"/D/Repositorios/schonflower/notas.txt",
+		"/D/Repositorios/schonflower/resources/views/orden/homeOrden.blade.php",
+		"/D/Repositorios/schonflower/app/detalle_menu.php",
+		"/D/Repositorios/schonflower/resources/views/menu/addMenu.blade.php",
+		"/D/Repositorios/schonflower/resources/views/menu/editMenu.blade.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/menuController.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/HomeController.php",
+		"/D/Repositorios/schonflower/resources/views/layouts/principal.blade.php",
+		"/D/Repositorios/schonflower/public/dist/custom/addPromocion.js",
+		"/D/Repositorios/schonflower/app/Http/Controllers/ordenManualController.php",
+		"/D/Repositorios/schonflower/resources/views/promocion/forms/form.blade.php",
+		"/D/Repositorios/schonflower/resources/views/promocion/addPromocion.blade.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/promoController.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/detallePromocion.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/promoRequest.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/productoUpdateRequest.php",
+		"/D/Repositorios/schonflower/app/promocion_detalle.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_11_27_212651_mask_promo_detalle.php",
+		"/D/Repositorios/schonflower/app/promocion.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_11_27_200756_id_promo_detalle.php",
+		"/D/Repositorios/schonflower/resources/views/orden/forms/form.blade.php",
+		"/D/Repositorios/schonflower/resources/views/menu/forms/form.blade.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_11_20_162001_addTOkenPromoDet.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_11_20_111924_create_promocion_detalles_table.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_11_20_161735_addTOkenPromo.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_11_19_225618_create_promocions_table.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/tipoMenuController.php",
+		"/D/Repositorios/schonflower/public/dist/css/AdminLTE.min.css",
+		"/D/Repositorios/schonflower/public/bootstrap/css/bootstrap.min.css",
+		"/D/Repositorios/schonflower/resources/views/promocion/homePromocion.blade.php",
+		"/D/Repositorios/schonflower/public/dist/custom/promocion.js",
+		"/D/Repositorios/schonflower/resources/views/producto/forms/form.blade.php",
+		"/D/Repositorios/schonflower/public/dist/custom/addProducto.js",
+		"/D/Repositorios/schonflower/public/dist/custom/producto.js",
+		"/D/Repositorios/schonflower/resources/views/producto/homeProducto.blade.php",
+		"/D/Repositorios/schonflower/app/productos.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_22_215007_create_precio_combos_table.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/productoController.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/empresaController.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/categoriaController.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/usuarioController.php",
+		"/D/Repositorios/schonflower/public/dist/custom/addOrden.js",
+		"/D/Repositorios/schonflower/resources/views/orden/addOrden.blade.php",
+		"/D/Repositorios/schonflower/resources/views/orden/forms/doc.blade.php",
+		"/D/Repositorios/schonflower/public/dist/custom/addMenu.js",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_23_220307_addEmpresaOrden.php",
+		"/D/Repositorios/schonflower/public/dist/custom/empresa.js",
+		"/D/Repositorios/schonflower/resources/views/empresa/editEmpresa.blade.php",
+		"/D/Repositorios/schonflower/resources/views/empresa/forms/form.blade.php",
+		"/D/Repositorios/schonflower/public/dist/custom/categoria.js",
+		"/D/Repositorios/schonflower/resources/views/categoria/editCategoria.blade.php",
+		"/D/Repositorios/schonflower/resources/views/empresa/addEmpresa.blade.php",
+		"/D/Repositorios/schonflower/resources/views/categoria/forms/form.blade.php",
+		"/D/Repositorios/schonflower/resources/views/categoria/addCategoria.blade.php",
+		"/D/Repositorios/schonflower/resources/views/categoria/homeCateg.blade.php",
+		"/D/Repositorios/schonflower/resources/views/empresa/homeEmpresa.blade.php",
+		"/D/Repositorios/schonflower/app/empresa.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/empresaUpdateRequest.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/empresaAddRequest.php",
+		"/D/Repositorios/schonflower/resources/views/orden/forms/factura.blade.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/dirController.php",
+		"/D/Repositorios/schonflower/resources/views/usuario/editUsuario.blade.php",
+		"/D/Repositorios/schonflower/public/dist/custom/editUsuario.js",
+		"/D/Repositorios/schonflower/resources/views/usuario/addUsuario.blade.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_23_135700_create_direccion_usuarios_table.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_08_213752_create_direcion_usuarios_table.php",
+		"/D/Repositorios/schonflower/app/direcion_usuario.php",
+		"/D/Repositorios/schonflower/app/direccion_usuario.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_16_213546_addTokenDir.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_22_175829_addDefectoDir.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_18_224020_addCamposOrden.php",
+		"/D/Repositorios/schonflower/resources/views/usuario/forms/form.blade.php",
+		"/D/Repositorios/schonflower/resources/views/usuario/forms/dirs.blade.php",
+		"/D/Repositorios/schonflower/app/User.php",
+		"/D/Repositorios/schonflower/resources/views/producto/addProducto.blade.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_16_211852_addTokenUer.php",
+		"/D/Repositorios/schonflower/resources/views/usuario/homeUsuario.blade.php",
+		"/D/Repositorios/schonflower/resources/views/menu/homeMenu.blade.php",
+		"/D/Repositorios/schonflower/app/ubigeo_lima.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_08_220038_create_ubigeo_limas_table.php",
+		"/D/Repositorios/schonflower/resources/views/layouts/app.blade.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/usuarioAddRequest.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/usuarioUpdateRequest.php",
+		"/D/Repositorios/schonflower/resources/views/producto/editProducto.blade.php",
+		"/D/Repositorios/schonflower/public/dist/custom/usuario.js",
+		"/D/Repositorios/schonflower/database/migrations/2016_10_05_215427_addCamposUsuario.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_28_223315_create_pedido_users_table.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_28_223628_create_comanda_users_table.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_29_220219_create_orden_usuarios_table.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_29_220237_create_pedido_usuarios_table.php",
+		"/D/Repositorios/schonflower/public/dist/custom/menu_hoy.js",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_28_222953_create_carrito_users_table.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/updateMenuRequest.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/addMenuRequest.php",
+		"/D/Repositorios/schonflower/app/menu_hoy.php",
+		"/D/Repositorios/schonflower/resources/lang/es/validation.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_25_221851_addSKUMenuDetalle.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_25_225124_addIDMenuDetalle.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_25_210140_addLoteMenuhoy.php",
+		"/D/Repositorios/schonflower/public/plugins/select2/select2.min.css",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_24_215741_addTokenMenu.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_24_215921_addTokenMenuDetalle.php",
+		"/D/Repositorios/schonflower/public/dist/custom/addPrecioCbo.js",
+		"/D/Repositorios/schonflower/resources/views/precio_combo/editPrecioCbo.blade.php",
+		"/D/Repositorios/schonflower/app/Http/Controllers/precioComboController.php",
+		"/D/Repositorios/schonflower/resources/views/precio_combo/homePrecioCombo.blade.php",
+		"/D/Repositorios/schonflower/resources/views/precio_combo/forms/form.blade.php",
+		"/D/Repositorios/schonflower/app/precio_combo.php",
+		"/D/Repositorios/schonflower/resources/views/precio_combo/addPrecioCbo.blade.php",
+		"/D/Repositorios/schonflower/app/tipo_menu.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/precioCboaddRequest.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/precioCboupdateRequest.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_22_221325_addComentMenuHoy.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_22_220149_create_detalle_menus_table.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_22_215702_create_menu_hoys_table.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_22_220341_addPrecioProd.php",
+		"/D/Repositorios/schonflower/app/Http/Requests/addTipoMenuRequest.php",
+		"/D/Repositorios/schonflower/app/menu.php",
+		"/D/Repositorios/schonflower/public/plugins/datepicker/locales/bootstrap-datepicker.es.js",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_18_132248_addLoteMenu.php",
+		"/D/Repositorios/schonflower/app/categoria.php",
+		"/D/Repositorios/schonflower/database/migrations/2016_09_10_072224_create_menus_table.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"D:\\Repositorios\\yupi-ventas",
+			"D:\\Repositorios\\farmacia\\public\\js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"#encuentr",
+			"cuadernoSection",
+			"tipocuad",
+			"escolar",
+			".dropdown-menu",
+			"#cuadernoSection",
+			"background-x",
+			"show_item",
+			"dist/img/demo/1.jpg",
+			"block3",
+			"nave1",
+			"nube2",
+			"this",
+			"nav-block",
+			"nav-anillado",
+			"anillados_sel",
+			"anillado",
+			"wrapper_tipos",
+			"tipo",
+			"accion-college",
+			"ico-yt",
+			"$o",
+			"carbon",
+			"where",
+			"carbon",
+			"frmDetalle",
+			"}",
+			"$producto",
+			"promo_combos",
+			"dist/img/user2-160x160.jpg",
+			"user2-160x160.jpg",
+			"user3-128x128.jpg",
+			"sessio",
+			"set_dirs_user",
+			"set_dir_user",
+			"$categoria",
+			"buscar_user",
+			"set_dir_user",
+			"vset_dir_user",
+			"v",
+			"direcion_usuario",
+			"users_dirs",
+			"dir_user",
+			"_srvDir",
+			"btnSaveDet",
+			"_srvDir",
+			"dirs_user",
+			"user-name",
+			"togl",
+			"close",
+			"users_query",
+			"buscar_user",
+			"query",
+			"hidde",
+			"token",
+			"llenar_tabla",
+			"token",
+			"get_categ_name",
+			"dash",
+			"nombre",
+			"$producto",
+			"manteni",
+			"$categoria",
+			"id_producto",
+			"llenar_combo",
+			"line-height:28px;",
+			"line-height: 28px;",
+			"$producto",
+			"datep",
+			"date",
+			"myModal",
+			"$categoria",
+			"categoria",
+			"$categoria",
+			"delCateg",
+			"id_categoria",
+			"alexander",
+			"producto_usuario",
+			"store",
+			"get_headers_ventas_home",
+			"producto ",
+			"btnBuscarProdLte",
+			"frmBuscarProds",
+			"update(",
+			"frmHeader",
+			"_url",
+			"_servicio",
+			"addProdItem",
+			"producto_lote",
+			"data",
+			"fecha_hoy",
+			"venta",
+			"tipo_",
+			"venta",
+			"invoice",
+			"update(",
+			"make_lote",
+			"get_lastkardex",
+			"update(",
+			"Precio",
+			"precio",
+			"set_logs(",
+			"_servicio",
+			"detalleInv",
+			"venta",
+			"Response",
+			"update(",
+			"update",
+			"->id",
+			"set_logs",
+			"venta",
+			"ddelacru",
+			"__construct",
+			"index",
+			"DDELACRUZ",
+			"addProLot",
+			"addprodlo",
+			"var",
+			"venta_fecha",
+			"si, agre",
+			"get_config",
+			"config",
+			"get_headers_ventas_home",
+			"farmacia",
+			"lt_producto",
+			"redirect",
+			"frmNuevoProd",
+			" </"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"nav-blocks",
+			"nav-anillados",
+			"$rs",
+			"{{ url('dist/img/user2-160x160.jpg') }}",
+			"$rs",
+			"direccion_usuario",
+			"get_name_ubigeo",
+			"$rs",
+			"$precioCbo",
+			"$tipo_menu",
+			"producto",
+			"$producto",
+			"id",
+			"$ve",
+			"$data['venta']",
+			"saveDetalle",
+			"token_new_venta",
+			"id",
+			"$cliente",
+			"Docs",
+			"$kdx",
+			"$kx",
+			"Producto",
+			"marca",
+			"producto",
+			"id_marca",
+			"$marca"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "D:\\Repositorios\\college\\web"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/Repositorios/college/web/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16033,
+								16045
+							]
+						],
+						"settings":
+						{
+							"auto_name": "index.html",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										16045,
+										16046
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										16032,
+										16033
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/LAZY.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 804.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/Repositorios/college/web/test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8951,
+								8951
+							]
+						],
+						"settings":
+						{
+							"auto_name": "test.html",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/LAZY.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2345.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/Repositorios/college/web/dist/js/custom.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7018,
+								6824
+							]
+						],
+						"settings":
+						{
+							"auto_name": "custom.js",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										8025,
+										8026
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										4870,
+										4871
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/LAZY.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3452.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/Repositorios/college/web/dist/css/custom.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "customs.css",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/LAZY.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Repositorios/college/web/dist/libs/tiny/responsive/tinycarousel.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										174,
+										175
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										29,
+										30
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/LAZY.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"addorden.js",
+				"public\\dist\\custom\\addOrden.js"
+			],
+			[
+				"addorden",
+				"resources\\views\\orden\\addOrden.blade.php"
+			],
+			[
+				"homeorden",
+				"resources\\views\\orden\\homeOrden.blade.php"
+			],
+			[
+				"addpromocion",
+				"resources\\views\\promocion\\addPromocion.blade.php"
+			],
+			[
+				"addmenu.bla",
+				"resources\\views\\menu\\addMenu.blade.php"
+			],
+			[
+				"css/adminlte.min.css",
+				"public\\dist\\css\\AdminLTE.min.css"
+			],
+			[
+				"bootstrap.min.css",
+				"public\\bootstrap\\css\\bootstrap.min.css"
+			],
+			[
+				"adminlte.min.css",
+				"public\\dist\\css\\AdminLTE.min.css"
+			],
+			[
+				"promocion.js",
+				"public\\dist\\custom\\promocion.js"
+			],
+			[
+				"addproducto.js",
+				"public\\dist\\custom\\addProducto.js"
+			],
+			[
+				"custom/producto.js",
+				"public\\dist\\custom\\producto.js"
+			],
+			[
+				"usuariocontroller",
+				"app\\Http\\Controllers\\usuarioController.php"
+			],
+			[
+				"custom/categoria.js",
+				"public\\dist\\custom\\categoria.js"
+			],
+			[
+				"empresaaddrequest",
+				"app\\Http\\Requests\\empresaAddRequest.php"
+			],
+			[
+				"custom/editusuario.js",
+				"public\\dist\\custom\\editUsuario.js"
+			],
+			[
+				"custom/addmenu.js",
+				"public\\dist\\custom\\addMenu.js"
+			],
+			[
+				"producto.js",
+				"public\\dist\\custom\\producto.js"
+			],
+			[
+				"ordenmanualcontroller",
+				"app\\Http\\Controllers\\ordenManualController.php"
+			],
+			[
+				"detallemenucontroller",
+				"app\\Http\\Controllers\\detalleMenuController.php"
+			],
+			[
+				"menu_hoy.js",
+				"public\\dist\\custom\\menu_hoy.js"
+			],
+			[
+				"categoria.js",
+				"public\\dist\\custom\\categoria.js"
+			],
+			[
+				"addmenu.js",
+				"public\\dist\\custom\\addMenu.js"
+			],
+			[
+				"productocontroller",
+				"app\\Http\\Controllers\\productoController.php"
+			],
+			[
+				"elect2.min.css",
+				"public\\plugins\\select2\\select2.min.css"
+			],
+			[
+				"addmenu",
+				"resources\\views\\menu\\addMenu.blade.php"
+			],
+			[
+				"addtipomenurequest",
+				"app\\Http\\Requests\\addTipoMenuRequest.php"
+			],
+			[
+				"bootstrap-datepicker.es.js",
+				"public\\plugins\\datepicker\\locales\\bootstrap-datepicker.es.js"
+			],
+			[
+				"addproducto",
+				"public\\dist\\custom\\addProducto.js"
+			],
+			[
+				"homeproducto",
+				"resources\\views\\producto\\homeProducto.blade.php"
+			],
+			[
+				"homecontroller",
+				"app\\Http\\Controllers\\HomeController.php"
+			],
+			[
+				"rep_producto_usuario.js",
+				"public\\js\\custom\\rep_producto_usuario.js"
+			],
+			[
+				"reportescontroller",
+				"app\\Http\\Controllers\\reportesController.php"
+			],
+			[
+				"editarproductolote",
+				"resources\\views\\productolote\\editarProductoLote.blade.php"
+			],
+			[
+				"productolotecontroller",
+				"app\\Http\\Controllers\\productoLoteController.php"
+			],
+			[
+				"exportdocs",
+				"app\\Http\\Controllers\\exportDocs.php"
+			],
+			[
+				"reportes_usuario.js",
+				"public\\js\\custom\\reportes_usuario.js"
+			],
+			[
+				"ventascontroller",
+				"app\\Http\\Controllers\\ventasController.php"
+			],
+			[
+				"kardexcontroller",
+				"app\\Http\\Controllers\\kardexController.php"
+			],
+			[
+				"pecontroller",
+				"app\\Http\\Controllers\\peController.php"
+			],
+			[
+				"detallepecontroller",
+				"app\\Http\\Controllers\\detallePEController.php"
+			],
+			[
+				"proveedorcontroller",
+				"app\\Http\\Controllers\\proveedorController.php"
+			],
+			[
+				"clasecontroller",
+				"app\\Http\\Controllers\\claseController.php"
+			],
+			[
+				"marcacontroller",
+				"app\\Http\\Controllers\\marcaController.php"
+			],
+			[
+				"categoriacontroller",
+				"app\\Http\\Controllers\\categoriaController.php"
+			],
+			[
+				"homeproductolote_filtro",
+				"resources\\views\\productolote\\homeProductoLote_filtro.blade.php"
+			],
+			[
+				"productolote.js",
+				"public\\js\\custom\\productoLote.js"
+			],
+			[
+				"homeproductolote",
+				"resources\\views\\productolote\\homeProductoLote.blade.php"
+			],
+			[
+				"resumenventausuario",
+				"resources\\views\\reportes\\resumenVentaUsuario.blade.php"
+			],
+			[
+				"ventas_user",
+				"vendor\\fzaninotto\\faker\\src\\Faker\\Provider\\en_US\\Person.php"
+			],
+			[
+				"addventa.js",
+				"public\\js\\custom\\addVenta.js"
+			],
+			[
+				"ventaupdaterequest",
+				"app\\Http\\Requests\\ventaUpdateRequest.php"
+			],
+			[
+				"updateventa",
+				"resources\\views\\venta\\updateVenta.blade.php"
+			],
+			[
+				"detalleinvetariocontroller",
+				"app\\Http\\Controllers\\detalleInvetarioController.php"
+			],
+			[
+				"custom/addventa.js",
+				"public\\js\\custom\\addVenta.js"
+			],
+			[
+				"mdwadmin",
+				"app\\Http\\Middleware\\mdwAdmin.php"
+			],
+			[
+				"homeventa",
+				"resources\\views\\venta\\homeVenta.blade.php"
+			],
+			[
+				"routes.ph",
+				"app\\Http\\routes.php"
+			],
+			[
+				"routes",
+				"app\\Providers\\RouteServiceProvider.php"
+			],
+			[
+				"delventa",
+				"app\\Http\\Controllers\\delVenta.php"
+			],
+			[
+				"karde",
+				"app\\kardex.php"
+			],
+			[
+				"ventafecha",
+				"resources\\views\\venta\\ventaFecha.blade.php"
+			],
+			[
+				"add",
+				"public\\js\\custom\\addVenta.js"
+			],
+			[
+				"prodlte",
+				"app\\Http\\Controllers\\prodlte.php"
+			],
+			[
+				"configcontroller",
+				"app\\Http\\Controllers\\configController.php"
+			],
+			[
+				"addve",
+				"public\\js\\custom\\addVenta.js"
+			],
+			[
+				"exportdoc",
+				"app\\Http\\Controllers\\exportDocs.php"
+			],
+			[
+				"custom/ventas.js",
+				"public\\js\\custom\\ventas.js"
+			],
+			[
+				"invoice",
+				"resources\\views\\venta\\invoice.blade.php"
+			],
+			[
+				"ventacontr",
+				"app\\Http\\Controllers\\ventasController.php"
+			],
+			[
+				"ventascontro",
+				"app\\Http\\Controllers\\ventasController.php"
+			],
+			[
+				"login/for",
+				"resources\\views\\login\\form.blade.php"
+			],
+			[
+				"pe.js",
+				"public\\js\\custom\\pe.js"
+			],
+			[
+				"232",
+				"vendor\\phpunit\\phpunit-mock-objects\\tests\\MockObject\\232.phpt"
+			],
+			[
+				"addven",
+				"public\\js\\custom\\addVenta.js"
+			],
+			[
+				"addvent",
+				"public\\js\\custom\\addVenta.js"
+			],
+			[
+				"ventacreatere",
+				"app\\Http\\Requests\\ventaCreateRequest.php"
+			],
+			[
+				"ventacreaterequest",
+				"app\\Http\\Requests\\ventaCreateRequest.php"
+			],
+			[
+				"detalle_ventacontroller",
+				"app\\Http\\Controllers\\detalle_ventaController.php"
+			],
+			[
+				"funciones",
+				"public\\js\\custom\\funciones.js"
+			],
+			[
+				"custom/addpe.js",
+				"public\\js\\custom\\addPE.js"
+			],
+			[
+				"custom/clientes.js",
+				"public\\js\\custom\\clientes.js"
+			],
+			[
+				"custom/proveedores.js",
+				"public\\js\\custom\\proveedores.js"
+			],
+			[
+				"func",
+				"public\\js\\custom\\funciones.js"
+			],
+			[
+				"addpe",
+				"public\\js\\custom\\addPE.js"
+			],
+			[
+				"custom/marca.js",
+				"public\\js\\custom\\marca.js"
+			],
+			[
+				"boots",
+				"public\\css\\bootstrap.min.css"
+			],
+			[
+				"datatables.js",
+				"public\\js\\datatables\\src\\DataTables.js"
+			],
+			[
+				"js/custom/addpe.js",
+				"public\\js\\custom\\addPE.js"
+			],
+			[
+				"datatables.min.js",
+				"public\\js\\data_table\\datatables.min.js"
+			],
+			[
+				"s/custom.js",
+				"public\\js\\custom.js"
+			],
+			[
+				"addcategoria.js",
+				"public\\js\\custom\\addCategoria.js"
+			],
+			[
+				"marca.js",
+				"public\\js\\custom\\marca.js"
+			],
+			[
+				"alertify",
+				"public\\js\\alertify\\alertify.js"
+			],
+			[
+				"usuariocon",
+				"app\\Http\\Controllers\\UsuarioController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

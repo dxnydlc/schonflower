@@ -34,6 +34,10 @@ class ordenManualController extends Controller
      */
     public function index()
     {
+        #para marcar el menu
+        Session::set('current_menu','pedido');
+        Session::set('current_menu_opt','manual');
+
         $dataMenu = array();
         return view('orden.homeOrden',compact('dataMenu'));
     }
@@ -53,6 +57,17 @@ class ordenManualController extends Controller
         $data['empresa']    = empresa::orderBy('nombre')->lists('nombre','id');
         $data['fecha']      = $mytime->format('d/m/Y');
         $data['token']      = $token;
+        #
+        $fecha              = $mytime->toDateString();
+        # Menu hoy
+        $data_menu          = menu_hoy::select('*')->where('fecha', '=', $fecha )->whereNull('deleted_at')->get();
+        $data['menu']       = $data_menu;
+        $id_menu            = $data_menu[0]->id;
+        #Platos del menu de hoy
+        $data_platos        = detalle_menu::select('*')->where('id_menu', '=', $id_menu )->whereNull('deleted_at')->orderBy('categoria', 'asc')->get();
+        $data['platos']     = $data_platos;
+        #
+        #return $data;
         return view('orden.addOrden',compact('data'));
     }
 
@@ -111,4 +126,17 @@ class ordenManualController extends Controller
     {
         //
     }
+
+
+    public function get_menu_hoy()
+    {
+        #$mytime = Carbon\Carbon::now('America/Lima');
+        $mytime = Carbon\Carbon::now();
+        $fecha = $mytime->toDateString();
+        #
+        $data_menu = menu_hoy::select('*')->where('fecha', '=', $fecha )->whereNull('deleted_at')->get();
+        return $fecha;
+    }
+
+
 }

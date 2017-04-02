@@ -90,59 +90,75 @@ Schon Flower - Agregar Orden Manual
 				<div class="box box-success">
 					<div class="box-header">
 						<h3 class="box-title">Detalle del pedido</h3>
+						<a href="#" class=" btn btn-primary btn-sm " data-toggle="modal" data-target="#myModal" >Agregar Plato</a>
 					</div>
 					<div class="box-body">
 						<!-- Contenido aqui -->
-						<table class="table table-hover">
-						<tbody><tr>
-						<th>ID</th>
-						<th>User</th>
-						<th>Date</th>
-						<th>Status</th>
-						<th>Reason</th>
-						</tr>
-						<tr>
-						<td>183</td>
-						<td>John Doe</td>
-						<td>11-7-2014</td>
-						<td><span class="label label-success">Approved</span></td>
-						<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-						</tr>
-						<tr>
-						<td>219</td>
-						<td>Alexander Pierce</td>
-						<td>11-7-2014</td>
-						<td><span class="label label-warning">Pending</span></td>
-						<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-						</tr>
-						<tr>
-						<td>657</td>
-						<td>Bob Doe</td>
-						<td>11-7-2014</td>
-						<td><span class="label label-primary">Approved</span></td>
-						<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-						</tr>
-						<tr>
-						<td>175</td>
-						<td>Mike Doe</td>
-						<td>11-7-2014</td>
-						<td><span class="label label-danger">Denied</span></td>
-						<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-						</tr>
-						</tbody>
+						<table id="tblMenu" class="table table-hover">
+							<thead>
+								<tr>
+									<th>Tipo</th>
+									<th>Plato</th>
+									<th>Lote</th>
+									<th>SKU</th>
+									<th>Precio</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
 						</table>
 					</div>
-				</div>
+				</div><!-- /box-success -->
 
 				
 				<div class="box box-success">
 					<div class="box-body">
 						<!-- Contenido aqui -->
-                    	<div class="box-footer">
-			                <button type="submit" class="btn btn-primary">Guardar</button>
-			            </div>
+						<div class="row">
+							<div class="col-md-4 col-md-offset-8">
+								<table class=" table table-hover " >
+		                    		<thead>
+		                    			<tr>
+		                    				<th class="text-right" >Sub Total</th>
+		                    				<td class="text-right" >10.00</td>
+		                    			</tr>
+		                    			<tr>
+		                    				<th class="text-right" >Delivery</th>
+		                    				<td class="text-right" >10.00</td>
+		                    			</tr>
+		                    			<tr>
+		                    				<th class="text-right" >Descuento</th>
+		                    				<td class="text-right" >10.00</td>
+		                    			</tr>
+		                    			<tr>
+		                    				<th class="text-right" >Total</th>
+		                    				<td class="text-right" >10.00</td>
+		                    			</tr>
+		                    		</thead>
+		                    	</table>
+							</div>
+						</div>    	
 					</div>
-				</div>
+				</div><!-- /box-success -->
+
+				<div class="box box-success">
+					<div class="box-body">
+						<!-- Contenido aqui -->
+						<div class="row">
+							<div class="col-md-3">
+								<div class="box-footer">
+		                    		<a class="btn btn-block btn-social btn-bitbucket ">
+										<i class="fa fa-money"></i>
+										Proceder con el pago
+									</a>
+					            </div>
+							</div>
+						</div>
+		                    	
+					</div>
+				</div><!-- /box-success -->
+
 			</div>
 		</div>
 
@@ -250,6 +266,107 @@ Schon Flower - Agregar Orden Manual
     </div>
   </div>
 </div>
+
+
+<!-- Modal add plato -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Buscar producto</h4>
+      </div>
+      <div class="modal-body">
+        
+        <table class="table">
+        	<thead>
+        		<tr>
+        			<th>Tipo</th>
+        			<th>Producto</th>
+        			<th>SKU</th>
+        			<th>Precio</th>
+        			<th>Stock</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		@foreach($data['platos'] as $rs)
+                    <tr>
+                        <td>{{$rs->categoria}}</td>
+                        <td><a href="#" class="setPlato" >{{$rs->producto}}</a></td>
+                        <td>{{$rs->sku}}</td>
+                        <td>{{$rs->precio}}</td>
+                        <td>{{$rs->stock}}</td>
+                    </tr>
+				@endforeach
+        	</tbody>
+        </table>
+		
+		{!!Form::open(['route'=>'det_orden_manual.store','method'=>'post','autocomplete'=>'off', 'id' => 'frmDetalle' ])!!}
+			
+			<input type="hidden" id="token" name="token" value="{{ $data['token'] }}" >
+			  
+			<div class="row">
+				<div class="col-md-4">
+        			<div class="form-group">
+					    {!!Form::text('id_orden',0,['class'=>'form-control','id' => 'id_orden'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+					    {!!Form::text('id_menu',0,['class'=>'form-control','id' => 'id_menu'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+					    {!!Form::text('tipo_menu',null,['class'=>'form-control','id' => 'tipo_menu'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						{!!Form::text('id_plato',null,['class'=>'form-control','id' => 'id_plato'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						{!!Form::text('plato',null,['class'=>'form-control','id' => 'plato'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						{!!Form::text('lote',null,['class'=>'form-control','id' => 'lote'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						{!!Form::text('sku',null,['class'=>'form-control','id' => 'sku'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						{!!Form::text('cantidad',null,['class'=>'form-control','id' => 'cantidad'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						{!!Form::text('precio',null,['class'=>'form-control','id' => 'precio'])!!}
+					</div>
+        		</div>
+        		<div class="col-md-4">
+        			<div class="form-group">
+						{!!Form::text('total',null,['class'=>'form-control','id' => 'total'])!!}
+					</div>
+        		</div>
+        	</div>
+
+		{!!Form::close()!!}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 @endsection

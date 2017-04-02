@@ -388,7 +388,7 @@ $current_menu_opt = Session::get('current_menu_opt');
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview <?php if( $current_menu == 'menu' ){ echo 'active'; } ?> ">
           <a href="#">
             <i class="fa fa-cutlery"></i> <span>Menú</span>
             <span class="pull-right-container">
@@ -396,11 +396,15 @@ $current_menu_opt = Session::get('current_menu_opt');
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('/menu') }}"><i class="fa fa-circle-o"></i> Menú hoy</a></li>
+            <li>
+              <a href="{{ url('/menu') }}">
+                <i class="fa <?php if( $current_menu_opt == 'hoy' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?>"></i> Menú hoy
+              </a>
+            </li>
           </ul>
         </li>
         
-        <li class="treeview">
+        <li class="treeview  ">
           <a href="#">
             <i class="fa fa-hand-scissors-o"></i> <span>Promociones</span>
             <span class="pull-right-container">
@@ -412,7 +416,7 @@ $current_menu_opt = Session::get('current_menu_opt');
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview <?php if( $current_menu == 'pedido' ){ echo 'active'; } ?> " >
           <a href="#">
             <i class="fa fa-file-text-o"></i> <span>Pedido manual</span>
             <span class="pull-right-container">
@@ -420,7 +424,11 @@ $current_menu_opt = Session::get('current_menu_opt');
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('/orden_manual') }}"><i class="fa fa-circle-o"></i> Menú hoy</a></li>
+            <li>
+              <a href="{{ url('/orden_manual') }}">
+                <i class="fa <?php if( $current_menu_opt == 'manual' ){ echo 'fa-circle'; }else{ echo 'fa-circle-o'; } ?> "></i> Menú hoy
+              </a>
+            </li>
           </ul>
         </li>
 

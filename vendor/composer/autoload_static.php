@@ -360,6 +360,7 @@ class ComposerStaticInit78ad560f4bc7625fb414eaaeecb324f6
         'CreateCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_10_071834_create_categorias_table.php',
         'CreateComandaUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_28_223628_create_comanda_users_table.php',
         'CreateDetalleMenusTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_22_220149_create_detalle_menus_table.php',
+        'CreateDetalleOrdensTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_03_175939_create_detalle_ordens_table.php',
         'CreateDireccionUsuariosTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_23_135700_create_direccion_usuarios_table.php',
         'CreateDirecionUsuariosTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_08_213752_create_direcion_usuarios_table.php',
         'CreateEmpresasTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_10_072036_create_empresas_table.php',
